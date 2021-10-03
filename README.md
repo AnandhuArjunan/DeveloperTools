@@ -9,12 +9,14 @@ Please Note : It is just a study project to improve my knowlegde in Java Program
 DeveloperTools is Java Desktop Application that uses Javafx , intended to provide some common tools , utilities that helps the developer improve the productivity.
 It has become some sort of framework to easly create tools and integrate in it.
 
+<img src="https://upload.wikimedia.org/wikipedia/en/c/cc/JavaFX_Logo.png" style="height: 150px; width:300px;"/>
+
 Tools in the sense , 
-String Manipulation [Convert Case , Append Words , Convert to other delimited ...etc]  
-File Conversion [CSV ,JSON , XML .etc]
-Java Utilites [Regx Tester , Decompiler , Compilier , IDE].
-Source Code Generator
-.etc
+- String Manipulation [Convert Case , Append Words , Convert to other delimited ...etc]  
+- File Conversion [CSV ,JSON , XML .etc]
+- Java Utilites [Regx Tester , Decompiler , Compilier , IDE].
+- Source Code Generator
+- .etc
 
 Above mentioned are not fully developed , it is under development only.
 
