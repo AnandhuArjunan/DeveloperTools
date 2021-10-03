@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.anandhuarjunan.developertools.core.controller.tools.sysinfo.CPUInfoController">
+   <children>
+      <HBox alignment="TOP_CENTER" VBox.vgrow="ALWAYS">
+         <children>
+            <VBox alignment="TOP_CENTER" spacing="5.0" HBox.hgrow="ALWAYS">
+               <children>
+                  <Label text="System CPU Usage" VBox.vgrow="ALWAYS">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <LineChart fx:id="sysCpuChart" animated="false" VBox.vgrow="ALWAYS">
+                    <xAxis>
+                      <CategoryAxis fx:id="cpuX" side="BOTTOM" />
+                    </xAxis>
+                    <yAxis>
+                      <NumberAxis fx:id="cpuY" side="LEFT" />
+                    </yAxis>
+                  </LineChart>
+               </children>
+               <padding>
+                  <Insets top="10.0" />
+               </padding>
+            </VBox>
+            <VBox alignment="TOP_CENTER" spacing="5.0" HBox.hgrow="ALWAYS">
+               <children>
+                  <Label text="Processor CPU Usage" VBox.vgrow="ALWAYS">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <LineChart fx:id="processorCpuChart" VBox.vgrow="ALWAYS">
+                    <xAxis>
+                      <CategoryAxis fx:id="processorX" side="BOTTOM" />
+                    </xAxis>
+                    <yAxis>
+                      <NumberAxis fx:id="processorY" side="LEFT" />
+                    </yAxis>
+                  </LineChart>
+               </children>
+               <padding>
+                  <Insets top="10.0" />
+               </padding>
+            </VBox>
+         </children>
+      </HBox>
+   </children>
+</VBox>

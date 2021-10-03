@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+<labels>
+	<block id="APP">
+		<label id="APP_NAME">
+			<language name="EN" content="Developer Tools"></language>
+			<language name="MLA" content="ഡെവലപ്പർ ഉപകരണങ്ങൾ"></language>
+		</label>
+		<label id="COPYRIGHT">
+			<language name="EN" content="Copyright 2020 Anandhu Arjunan"></language>
+			<language name="MLA" content="പകർപ്പവകാശം 2020 ആനന്ദു അർജുനൻ"></language>
+		</label>
+		<label id="CREATOR">
+			<language name="EN" content="By Anandhu Arjunan"></language>
+			<language name="MLA" content="ആനന്ദു അർജ്ജുനൻ"></language>
+		</label>
+	</block>
+	<block id="TOOL_NAME">
+		<label id="conv_case">
+			<language name="EN" content="Convert Case"></language>
+			<language name="MLA" content="കേസ് പരിവർത്തനം ചെയ്യുക"></language>
+		</label>
+			<label id="rem_blnk_lin">
+			<language name="EN" content="Remove Blank Lines"></language>
+			<language name="MLA" content="ശൂന്യമായ വരകൾ നീക്കംചെയ്യുക"></language>
+		</label>
+			<label id="cnt_line">
+			<language name="EN" content="Count Lines"></language>
+			<language name="MLA" content="വരികളുടെ എണ്ണം"></language>
+		</label>
+		<label id="epc">
+			<language name="EN" content="English Spell Checker"></language>
+			<language name="MLA" content="ഇംഗ്ലീഷ് സ്പെൽ ചെക്കർ"></language>
+		</label>
+			<label id="engdic">
+			<language name="EN" content="English Dictionary"></language>
+			<language name="MLA" content="ഇംഗ്ലീഷ് നിഘണ്ടു"></language>
+		</label>
+			<label id="classVisualizer">
+			<language name="EN" content="Class Visualizer"></language>
+			<language name="MLA" content="ക്ലാസ് വിഷ്വലൈസർ"></language>
+		</label>
+		
+	
+	</block>
+	<block id="TOOL_CATEGORY_NAME">
+		<label id="str_tools">
+			<language name="EN" content="String Tools"></language>
+			<language name="MLA" content="സ്ട്രിംഗ് ഉപകരണങ്ങൾ"></language>
+		</label>
+			<label id="lng_tools">
+			<language name="EN" content="Language Tools"></language>
+			<language name="MLA" content="ഭാഷാ ഉപകരണങ്ങൾ"></language>
+		</label>
+	
+	</block>
+</labels>

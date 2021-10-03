@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<messages>
+<block id="APP">
+	<message id="APP_NAME">
+		<language name="EN" conent="Developer Tools"></language>
+		<language name="MLA" conent="ഡെവലപ്പർ ഉപകരണങ്ങൾ"></language>
+	</message>
+</block>
+</messages>

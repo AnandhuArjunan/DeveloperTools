@@ -1,0 +1,12 @@
+.error {
+    -fx-fill: red;
+    -fx-font-weight: bold;
+}
+.info {
+    -fx-fill: blue;
+    -fx-font-weight: bold;
+}
+.warn {
+    -fx-fill: orange;
+    -fx-font-weight: bold;
+}

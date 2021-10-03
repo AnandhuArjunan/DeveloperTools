@@ -1,0 +1,14 @@
+
+.button {
+    border-radius: 5px;
+    -fx-font-size: 20px;
+}
+#startBtn, #resumeBtn {
+    -fx-background-color: #3fc928;
+}
+#pauseBtn {
+    -fx-background-color: #edb534;
+}
+#resetBtn {
+    -fx-background-color: #d82b3d;
+}

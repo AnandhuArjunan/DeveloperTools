@@ -1,0 +1,82 @@
+.root {
+    -fx-base: #1d1d1d;
+    -icons-color: rgb(61, 114, 144);
+}
+
+.split-pane:horizontal > .split-pane-divider {
+    -fx-padding: 0 0 0 1;
+}
+
+.text-input.error {
+    -fx-border-color: palevioletred;
+}
+
+.large-background-text {
+    -fx-font-size: 24px;
+    -fx-stroke: darkgray;
+    -fx-fill: darkgray;
+}
+
+.selected-pane {
+    -fx-border-width: 1, 1;
+    -fx-border-color: -fx-focus-color, -fx-faint-focus-color;
+    -fx-border-insets: -4 -4 -6 -5, -2 -2 -5 -3;
+    -fx-border-radius: 2, 1;
+}
+
+.bottom-message-pane {
+    -fx-background-color: lawngreen;
+    -fx-min-height: 10;
+    -fx-font-style: italic;
+    -fx-font-size: 9;
+}
+
+.log-line {
+    -fx-padding: 0, 5, 0, 5;
+}
+
+.log-line.selected {
+    -fx-background-color: -fx-focus-color;
+    -fx-text-fill: derive(-fx-focus-color, -80%);
+}
+
+LogView.dropping-files {
+    -fx-border-color: lawngreen;
+}
+
+.shadow-overlay {
+    -fx-opacity: 0.5;
+    -fx-background-color: -fx-base;
+}
+
+.shadow-overlay.highlight {
+    -fx-stroke: red 1px;
+}
+
+.message.info {
+    -fx-background-color: palegreen;
+    -fx-text-fill: lightyellow;
+}
+
+.message.warning {
+    -fx-background-color: sandybrown;
+    -fx-text-fill: darkslategray;
+}
+
+.message.error {
+    -fx-background-color: palevioletred;
+    -fx-text-fill: whitesmoke;
+}
+
+.drop-file-pane {
+    -fx-max-width: 290px;
+    -fx-pref-height: 150px;
+    -fx-border-width: 1px;
+    -fx-border-color: derive(-fx-base, -80%);
+    -fx-border-style: dashed;
+}
+
+.drop-file-pane.dropping-files {
+    -fx-border-width: 2px;
+    -fx-border-color: derive(-fx-base, 80%);
+}

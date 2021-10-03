@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<tools>
+	<category id="str_tools" enable="Y">
+		<tool id="conv_case" enable=""/>
+		<tool id="rem_blnk_lin" enable="n"/>
+		<tool id="cnt_line" enable="Y"/>
+		<!--  <category id="dgdg">
+			<tool id="abc"/>
+			<tool id="def"/>
+		</category>-->
+	</category>
+	<category id="lng_tools" enable="Y">
+		<tool id="epc" enable="Y"/>
+		<tool id="engdic" enable="Y"/>
+	</category>
+	<category id="extTools" enable="Y">
+		<tool id="classVisualizer" enable="Y">
+		<externaltool type="JR" command="F:\Tools\Design Tools\class-visualizer - Modded\clsvis.jar"/>
+		</tool>
+		<tool id="javad" enable="Y">
+		<externaltool type="WB" command="F:\Tools\Design Tools\class-visualizer - Modded\clsvis.exe"/>
+		</tool>
+		<tool id="java_decompiler" enable="Y">
+		</tool>
+		<category id="hf" enable="Y">
+		<tool id="java_deecompiler" enable="Y">
+		</tool>
+		</category>
+	</category>
+</tools>
