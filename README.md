@@ -75,18 +75,20 @@ DeveloperTools uses many libraries and Frameworks, DeveloperTools is nothing wit
 
 DeveloperTool Requires Java 16 and Maven.
 
+Before builing it with Maven , we need to add some local jars to the m2 Local Repository.
+To do that , Unzip the contents from local_libs/**extract_to_m2.7z** file to your m2 repo.
 
-
-Run the below command to build the binary.
+Then Run the below command to build the binary.
 ```sh
 mvn install
 ```
 
-For production environments...
+After building you will get a folder named **deploy** in the Project Directory.
+Inside that You can see the **DeveloperTools** binary folder , 
+deploy\DeveloperTools\ - Application Root Folder
 
 ```sh
-npm install --production
-NODE_ENV=production node app
+Just execute run.bat to start the Application
 ```
 
 
