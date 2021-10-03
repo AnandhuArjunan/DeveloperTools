@@ -44,9 +44,9 @@ Above mentioned are not fully developed , it is under development only.
 ## Problems Facing
 
 - It is using Java 16 , [But the code not even fully follow JDK 8 features .Need to upgrade to latest Java Standards]
-- There are some design issues.
+- It has some design issues.
 - Logging is not done.
-- Unit Testing is Not Done.
+- Unit Testing is not Done.
 
 
 ## Tech
