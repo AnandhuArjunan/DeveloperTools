@@ -1,4 +1,4 @@
-# Developer Tools
+# DeveloperTools
 ## Tools and Utilities that improves the Productivity of Developer
 
 
@@ -9,12 +9,14 @@ Please Note : It is just a study project to improve my knowlegde in Java Program
 DeveloperTools is Java Desktop Application that uses Javafx , intended to provide some common tools , utilities that helps the developer improve the productivity.
 It has become some sort of framework to easly create tools and integrate in it.
 
+<img src="https://upload.wikimedia.org/wikipedia/en/c/cc/JavaFX_Logo.png" style="height: 150px; width:300px;"/>
+
 Tools in the sense , 
-String Manipulation [Convert Case , Append Words , Convert to other delimited ...etc]  
-File Conversion [CSV ,JSON , XML .etc]
-Java Utilites [Regx Tester , Decompiler , Compilier , IDE].
-Source Code Generator
-.etc
+- String Manipulation [Convert Case , Append Words , Convert to other delimited ...etc]  
+- File Conversion [CSV ,JSON , XML .etc]
+- Java Utilites [Regx Tester , Decompiler , Compilier , IDE].
+- Source Code Generator
+- .etc
 
 Above mentioned are not fully developed , it is under development only.
 
@@ -42,14 +44,14 @@ Above mentioned are not fully developed , it is under development only.
 ## Problems Facing
 
 - It is using Java 16 , [But the code not even fully follow JDK 8 features .Need to upgrade to latest Java Standards]
-- There are some design issues.
+- It has some design issues.
 - Logging is not done.
-- Unit Testing is Not Done.
+- Unit Testing is not Done.
 
 
 ## Tech
 
-DeveloperTools uses many libraries and Frameworks, DeveloperTools is nothing without them.
+DeveloperTools uses some libraries and Frameworks, it is nothing without them.
 
 - [Openjfx] - The project uses Javafx for GUI.
 - [Apache Commons] - Helper Libraries
