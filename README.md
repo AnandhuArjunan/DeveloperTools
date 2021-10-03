@@ -18,6 +18,18 @@ Source Code Generator
 
 Above mentioned are not fully developed , it is under development only.
 
+
+## Screenshots
+
+![Alt text](screenshots/home.PNG?raw=true "Main Page")
+
+![Alt text](screenshots/tools1.PNG?raw=true "Tools Page")
+
+![Alt text](screenshots/tools2.PNG?raw=true "Tools Page")
+
+![Alt text](screenshots/tools3.PNG?raw=true "Tools Page")
+
+
 ## Currently Working Features
 - String Manipulation Tools
 
@@ -29,9 +41,10 @@ Above mentioned are not fully developed , it is under development only.
 
 ## Problems Facing
 
-- It is using Java 16 , [Not all code used even JDK 8 features .Need to upgrade to latest Java Standards]
+- It is using Java 16 , [But the code not even fully follow JDK 8 features .Need to upgrade to latest Java Standards]
 - There are some design issues.
 - Logging is not done.
+- Unit Testing is Not Done.
 
 
 ## Tech
