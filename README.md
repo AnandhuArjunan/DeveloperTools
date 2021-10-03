@@ -51,7 +51,7 @@ Above mentioned are not fully developed , it is under development only.
 
 ## Tech
 
-DeveloperTools uses many libraries and Frameworks, DeveloperTools is nothing without them.
+DeveloperTools uses some libraries and Frameworks, it is nothing without them.
 
 - [Openjfx] - The project uses Javafx for GUI.
 - [Apache Commons] - Helper Libraries
