@@ -31,6 +31,7 @@ public class ConvertCase extends AbstractTool{
 			caseUI.addItemsToToolBar(caseConvType);
 			caseUI.addItemsToToolBar(items);	
 			items.setOnAction(e->onchangeCaseType());
+			caseUI.output.setText("ccc");   
 			
 	}
 

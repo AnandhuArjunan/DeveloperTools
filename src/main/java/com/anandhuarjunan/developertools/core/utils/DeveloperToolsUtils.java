@@ -18,7 +18,7 @@ public class DeveloperToolsUtils {
     	tab.setId(abstractTool.getUniqueId());
 		tab.setText(abstractTool.getToolName());
 		tab.setUserData(abstractTool);
-		tab.setContent(content);
+		tab.setContent(content); 
 		tab.setOnClosed(onclosed);
 		tab.setClosable(closable);
 		tabPane.getTabs().add(tab);

@@ -58,7 +58,7 @@ public class CreatePluginController {
     
     @FXML
     void initialize() {
-    	
+ 
     	generateBtn.setOnAction(ev->generatePlugin());
     	browse.setOnAction(this::chooseJar);
     	gotolocation.setOnAction(this::gotoLocation);

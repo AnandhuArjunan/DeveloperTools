@@ -20,17 +20,24 @@ public class FileUtils {
 
 	public static void makeFolder(String path) throws InternalError {
 		File file = new File(path); 
-		try {
-			org.apache.commons.io.FileUtils.forceMkdir(file);
-		} catch (IOException e) {
-			throw new InternalError("Unable to Create the Folder in "+path, e);
+		if(!file.exists()) {
+			try {
+				org.apache.commons.io.FileUtils.forceMkdir(file);
+			} catch (IOException e) {
+				throw new InternalError("Unable to Create the Folder in "+path, e);
+			}
 		}
+		
 	}
 	
 	public static void makeFolder(File f) throws InternalError {
-		if(!f.exists() && !f.mkdir())
-			throw new InternalError("Can't create folder ");
-	}
+		if(!f.exists())
+			try {
+			org.apache.commons.io.FileUtils.forceMkdir(f);
+
+			} catch (IOException e) {
+				throw new InternalError("Unable to Create the Folder in "+f, e);
+			}	}
 	
 	public static void makeTemporaryFolder(String foldername) throws InternalError {
 		String path = GlobalConfig.getInstance().getAppConfiguration().getConfiguration(AppConfigurations.TEMP_FOLDER)+File.separator+foldername;

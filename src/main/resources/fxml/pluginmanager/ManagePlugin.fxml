@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.anandhuarjunan.developertools.core.controller.pluginmanager.PluginManageController">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.anandhuarjunan.developertools.core.controller.pluginmanager.PluginManageController">
   <BorderPane layoutX="127.0" layoutY="44.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
     <top>
          <VBox BorderPane.alignment="CENTER">
@@ -22,6 +22,8 @@
               <Button fx:id="selectPluginButton" onAction="#searchPlugin" text="Search" />
                   <Button fx:id="installedAddon" mnemonicParsing="false" text="Installed Add-ons" />
                   <Button fx:id="importFromFS" text="Import Add-on From File System" />
+                  <Button fx:id="createPlugin" mnemonicParsing="false" text="Create Plugins" />
+                  <Button fx:id="convertJar" mnemonicParsing="false" text="Convert Jar to FXML Plugin" />
               <padding>
                 <Insets bottom="10.0" />
               </padding>

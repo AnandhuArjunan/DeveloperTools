@@ -15,6 +15,7 @@ import java.util.concurrent.Executors;
 import java.util.stream.Collectors;
 
 import org.apache.commons.lang3.exception.ExceptionUtils;
+import org.apache.log4j.Logger;
 
 import com.anandhuarjunan.developertools.core.app.UIResources;
 import com.anandhuarjunan.developertools.core.app.config.global.GlobalConfig;
@@ -153,6 +154,8 @@ public class MainController extends DTController {
 	
 	MenuLoader menuLoader = null;
 	
+    static Logger log = Logger.getLogger(MainController.class);  
+
 
 	@FXML
 	void onClickMenu(ActionEvent event) {
@@ -197,7 +200,10 @@ onCloseApplication(event);
 			loadPlugins();
 			//initializeFooter();
 			addEvents();
+			Class.forName("com.anandhuarjunan.developertools.fxml.addon.controller.HelloWorldController");
+			
 		} catch (Exception e) {
+			log.error("Internal Error", e);
 		    NotifyMessage.notifyError("Runtime Error Occured");
 		}
 

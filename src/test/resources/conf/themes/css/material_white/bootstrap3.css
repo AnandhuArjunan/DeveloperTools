@@ -574,6 +574,8 @@ VBox > .split-menu-button.last > .arrow-button {
 
 .menu-bar {
 	-fx-background-color: white;
+	    -fx-font-size: 50px;
+	
 }
 .menu-bar > .container > .menu-button {
 	-fx-background-radius: 0;
@@ -927,4 +929,54 @@ VBox > .split-menu-button.last > .arrow-button {
 }
 .slider:vertical .track {
 	-fx-pref-width: 5;
+}
+
+
+/*Home Dashboard*/
+
+.dashboard_usr_icon{
+	    -fx-fill: #ffd54f;
+	
+}
+
+.dashboard_info{
+	
+}
+
+.dashboard_tool_menu{
+	   /* -fx-background-color: #37474f;*/
+	
+}
+
+.dashboard_tool_bookmark{
+	
+}
+.dashboard_search_bar{
+		    /*-fx-background-color: #607d8b;*/
+	
+}
+.dashboard_user_pane{
+			   /* -fx-background-color: #9e9e9e;*/
+	
+}
+
+.glyph-icon {
+    /*-fx-fill: #ffd54f;*/
+}
+
+
+
+
+
+.header_pane {
+	/*-fx-background-color:#37474f;*/
+	
+}
+.header_pane .label {
+	/*-fx-text-fill: #ffffff;*/
+	
+}
+.toolBlock{
+		/*-fx-background-color:#424242;*/
+	
 }

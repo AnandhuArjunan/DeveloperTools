@@ -44,15 +44,17 @@ public class DeveloperTools {
 
 		@Override
 		public void start(Stage stage) throws Exception {
-			Platform.setImplicitExit(false);
+			Platform.setImplicitExit(false); 
 			
 			log.error("afaf");
+			log.error("afassf"); 
 
+ 
 			LoaderUIController loaderController = loadStartWindow(stage);
 			if (null != loaderController) {
 				Task<Scene> loaderTask = loadMainUI();
 				loaderController.onCloseAction(() -> 
-					System.exit(0)
+					System.exit(0) 
 				);
 				loaderTask.setOnSucceeded(ev -> {
 					loadMainWindow(new Stage(), loaderTask.getValue());

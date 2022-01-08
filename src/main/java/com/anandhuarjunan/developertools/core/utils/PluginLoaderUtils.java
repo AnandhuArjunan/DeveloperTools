@@ -27,13 +27,17 @@ public class PluginLoaderUtils {
 	    @SuppressWarnings({ "unchecked", "rawtypes" })
 	    public static void loadJar(File jarFile) throws NoSuchMethodException, MalformedURLException, IllegalAccessException, InvocationTargetException {
 
-	    	try(IndependentClassLoader classLoader = new IndependentClassLoader(new URL[0], PluginLoaderUtils.class.getClassLoader())){
-	    		 URL url = jarFile.toURI().toURL();
-		    	    classLoader.addURL(url);
-	    	} catch (IOException e) {
-				e.printStackTrace();
-			}
-	        	
+	    	ClassLoader classLoader = ClassLoader.getSystemClassLoader();
+	    	try {
+	    	    Method method = classLoader.getClass().getDeclaredMethod("addURL", URL.class);
+	    	    method.setAccessible(true);
+	    	    method.invoke(classLoader, jarFile.toURI().toURL());
+	    	} catch (NoSuchMethodException e) {
+	    	    Method method = classLoader.getClass()
+	    	            .getDeclaredMethod("appendToClassPathForInstrumentation", String.class);
+	    	    method.setAccessible(true);
+	    	    method.invoke(classLoader, jarFile.getAbsolutePath());
+	    	}
 	    	
 	    	    
 	    }
