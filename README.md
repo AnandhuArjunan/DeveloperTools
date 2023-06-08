@@ -72,7 +72,7 @@ DeveloperTools uses some libraries and Frameworks, it is nothing without them.
 
 ## Installation
 
-DeveloperTool Requires Java 16 and Maven.
+DeveloperTool Requires Java 17 and Maven.
 
 Before builing it with Maven , we need to add some local jars to the m2 Local Repository.
 To do that , Unzip the contents from local_libs/**extract_to_m2.7z** file to your m2 repo.
