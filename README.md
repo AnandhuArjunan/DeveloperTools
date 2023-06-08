@@ -4,13 +4,14 @@ JDK 8 Branch
 
 ### Screenshots ###
 
+![Alt text](screenshots/Screenshot4.png?raw=true "Tools Page")
+
 ![Alt text](screenshots/Screenshot1.png?raw=true "Main Page")
 
 ![Alt text](screenshots/Screenshot2.png?raw=true "Tools Page")
 
 ![Alt text](screenshots/Screenshot3.png?raw=true "Tools Page")
 
-![Alt text](screenshots/Screenshot4.png?raw=true "Tools Page")
 
 ### How do I get set up? ###
 
