@@ -41,12 +41,10 @@ Above mentioned are not fully developed , it is under development only.
 - Adding more tools
 - Adding plugin support to integrate third party javafx Application.
 
-## Problems Facing
+## Requirements
 
-- It is using Java 17
-- Logging is pending.
-- Unit Testing is pending
-
+- Java 17
+- Maven
 
 ## Tech
 
