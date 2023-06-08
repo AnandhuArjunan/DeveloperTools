@@ -2,11 +2,15 @@
 
 JDK 8 Branch
 
-### What is this repository for? ###
+### Screenshots ###
 
-* Quick summary
-* Version
-* [Learn Markdown](https://bitbucket.org/tutorials/markdowndemo)
+![Alt text](screenshots/Screenshot1.png?raw=true "Main Page")
+
+![Alt text](screenshots/Screenshot2.png?raw=true "Tools Page")
+
+![Alt text](screenshots/Screenshot3.png?raw=true "Tools Page")
+
+![Alt text](screenshots/Screenshot4.png?raw=true "Tools Page")
 
 ### How do I get set up? ###
 
