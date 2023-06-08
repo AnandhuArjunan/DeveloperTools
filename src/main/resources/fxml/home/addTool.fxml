@@ -5,7 +5,7 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="150.0" prefWidth="350.0" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.anandhuarjunan.developertools.core.controller.home.AddToolController">
+<AnchorPane prefHeight="150.0" prefWidth="350.0" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.anzoft.developertools.controller.home.AddToolController">
    <children>
       <Label layoutX="14.0" layoutY="55.0" text="Tools" AnchorPane.bottomAnchor="74.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="300.0" AnchorPane.topAnchor="55.0" />
       <ComboBox fx:id="kindComboBox" layoutX="76.0" layoutY="50.0" prefHeight="25.0" prefWidth="260.0" promptText="Class" AnchorPane.bottomAnchor="69.0" AnchorPane.leftAnchor="76.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="50.0" />

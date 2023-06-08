@@ -1,7 +1,0 @@
-<?xml version = "1.0" encoding = "UTF-8" ?>
-<themes>
-
-<theme id="mdark" name = "Dark" location= "material_dark"/>
-<theme id="mwhite" name = "White" location= "material_white"/>
-
-</themes>

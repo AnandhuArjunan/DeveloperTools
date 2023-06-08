@@ -1,59 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import com.jfoenix.controls.JFXProgressBar?>
 <?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
-<?import io.github.palexdev.materialfx.controls.MFXProgressBar?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
-<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="307.0" prefWidth="491.0" styleClass="loaderPane" stylesheets="@../css/materialfx/ProgressBarDemo.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.anandhuarjunan.developertools.core.controller.LoaderUIController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="488.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.291" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.anzoft.developertools.controller.LoaderUIController">
    <center>
-      <VBox alignment="CENTER" BorderPane.alignment="CENTER">
+      <VBox alignment="CENTER" prefHeight="375.0" prefWidth="600.0" BorderPane.alignment="CENTER">
          <children>
-            <ImageView fitHeight="115.0" fitWidth="122.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../images/3d.png" />
-               </image>
-            </ImageView>
-            <Label text="DeveloperTools">
+            <Label text="Developer Tools">
                <font>
-                  <Font name="System Bold" size="31.0" />
+                  <Font name="System Bold" size="36.0" />
                </font>
             </Label>
-            <Label text="By Anandhu Arjunan">
-               <font>
-                  <Font size="11.0" />
-               </font>
-            </Label>
+            <Label text="By Anandhu Arjunan" />
          </children>
       </VBox>
    </center>
    <bottom>
-      <VBox alignment="CENTER" spacing="5.0" BorderPane.alignment="CENTER">
+      <VBox fx:id="downBlock" BorderPane.alignment="CENTER">
          <children>
-            <Label fx:id="infoLine" text="Loading" VBox.vgrow="ALWAYS" />
-            <AnchorPane>
-               <children>
-                  <MFXProgressBar fx:id="progressBar" prefHeight="8.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
-               </children>
-            </AnchorPane>
+            <Label fx:id="infoLine" alignment="CENTER" contentDisplay="CENTER" prefHeight="38.0" prefWidth="600.0" text="Loading..">
+               <font>
+                  <Font name="Calibri" size="15.0" />
+               </font></Label>
+            <JFXProgressBar fx:id="progressBar" prefHeight="23.0" prefWidth="600.0" />
          </children>
+         <BorderPane.margin>
+            <Insets />
+         </BorderPane.margin>
       </VBox>
    </bottom>
    <top>
-      <HBox alignment="CENTER_RIGHT" BorderPane.alignment="CENTER">
-         <children>
-            <FontAwesomeIconView fx:id="closeButton" glyphName="CLOSE" size="20" />
-         </children>
-         <padding>
-            <Insets right="20.0" top="10.0" />
-         </padding>
-      </HBox>
+      <FontAwesomeIconView fx:id="closeButton" glyphName="CLOSE" size="30" BorderPane.alignment="CENTER_RIGHT">
+         <BorderPane.margin>
+            <Insets right="10.0" top="10.0" />
+         </BorderPane.margin>
+      </FontAwesomeIconView>
    </top>
 </BorderPane>

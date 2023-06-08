@@ -13,17 +13,19 @@
         <property name="format_sql">false</property>
       <!--   <property name="hbm2ddl.auto">update</property> -->
        
-        <mapping class="com.anandhuarjunan.developertools.core.database.persistables.Tools"/>
-        <mapping class="com.anandhuarjunan.developertools.core.database.persistables.ExternalTools"/>
-        <mapping class="com.anandhuarjunan.developertools.core.database.persistables.InternalTools"/>
-        <mapping class="com.anandhuarjunan.developertools.core.database.persistables.Category"/>
-        <mapping class="com.anandhuarjunan.developertools.core.database.persistables.ToolTypes"/>
-        <mapping class="com.anandhuarjunan.developertools.core.database.persistables.ExternalAppTypes"/>
-        <mapping class="com.anandhuarjunan.developertools.core.database.persistables.ToolTypes"/>
-        <mapping class="com.anandhuarjunan.developertools.core.database.persistables.ToolActivityHistory"/>
-        <mapping class="com.anandhuarjunan.developertools.core.database.persistables.ToolBookmark"/>
-        <mapping class="com.anandhuarjunan.developertools.core.database.persistables.FxmlLoaderTools"/>
-        <mapping class="com.anandhuarjunan.developertools.core.database.persistables.app.FXMLAddOn"/>
+        <mapping class="com.anzoft.developertools.database.persistables.Tools"/>
+        <mapping class="com.anzoft.developertools.database.persistables.ExternalTools"/>
+        <mapping class="com.anzoft.developertools.database.persistables.InternalTools"/>
+        <mapping class="com.anzoft.developertools.database.persistables.Category"/>
+        <mapping class="com.anzoft.developertools.database.persistables.ToolTypes"/>
+        <mapping class="com.anzoft.developertools.database.persistables.ExternalAppTypes"/>
+        <mapping class="com.anzoft.developertools.database.persistables.ToolTypes"/>
+        <mapping class="com.anzoft.developertools.database.persistables.ToolActivityHistory"/>
+        <mapping class="com.anzoft.developertools.database.persistables.ToolBookmark"/>
+        <mapping class="com.anzoft.developertools.database.persistables.FxmlLoaderTools"/>
+         <mapping class="com.anzoft.developertools.database.persistables.PluginsData"/>
+         <mapping class="com.anzoft.developertools.database.persistables.PluginType"/>
+        
         
         
     </session-factory>

@@ -13,10 +13,10 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.anandhuarjunan.developertools.core.controller.servicemanager.ThreadManager">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.291" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.anzoft.developertools.controller.servicemanager.ThreadManager">
   <BorderPane layoutX="127.0" layoutY="44.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
     <top>
-      <HBox alignment="CENTER_LEFT" spacing="10.0" BorderPane.alignment="CENTER">
+      <HBox alignment="CENTER_LEFT" spacing="10.0" style="-fx-background-color: #f5f5f5;" BorderPane.alignment="CENTER">
             <FontAwesomeIconView glyphName="SEARCH" size="20" />
         <TextField fx:id="selectServiceTextField">
                <effect>
@@ -50,7 +50,7 @@
       </HBox>
     </top>
     <center>
-      <TableView fx:id="serviceDataTableView" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+      <TableView fx:id="serviceDataTableView" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #eeeeee;" BorderPane.alignment="CENTER">
         <columns>
                <TableColumn fx:id="id" prefWidth="75.0" text="Id" />
           <TableColumn fx:id="nameTableColumn" prefWidth="75.0" text="Name" />

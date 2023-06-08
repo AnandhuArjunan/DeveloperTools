@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import com.jfoenix.controls.JFXButton?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
@@ -9,37 +10,19 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.VBox?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.anandhuarjunan.developertools.core.controller.pluginmanager.PluginManageController">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.anzoft.developertools.controller.pluginmanager.PluginManageController">
   <BorderPane layoutX="127.0" layoutY="44.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
     <top>
-         <VBox BorderPane.alignment="CENTER">
-            <children>
-            <HBox alignment="CENTER_LEFT" spacing="5.0" VBox.vgrow="ALWAYS">
-              <Label text="Find add-on" />
-              <TextField fx:id="selectPluginTextField" />
-              <Button fx:id="selectPluginButton" onAction="#searchPlugin" text="Search" />
-                  <Button fx:id="installedAddon" mnemonicParsing="false" text="Installed Add-ons" />
-                  <Button fx:id="importFromFS" text="Import Add-on From File System" />
-                  <Button fx:id="createPlugin" mnemonicParsing="false" text="Create Plugins" />
-                  <Button fx:id="convertJar" mnemonicParsing="false" text="Convert Jar to FXML Plugin" />
-              <padding>
-                <Insets bottom="10.0" />
-              </padding>
-            </HBox>
-               <HBox alignment="CENTER_LEFT" spacing="5.0" VBox.vgrow="ALWAYS">
-                  <children>
-                     <Label text="Add-on Repo URL" />
-                     <Label fx:id="repoURL" text="test" HBox.hgrow="ALWAYS" />
-                     <Button fx:id="urlChangeButton" mnemonicParsing="false" text="Change" />
-                  </children>
-                  <padding>
-                     <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
-                  </padding>
-               </HBox>
-            </children>
-         </VBox>
+      <HBox alignment="CENTER_LEFT" spacing="5.0" BorderPane.alignment="CENTER">
+        <Label text="Find Plugin" />
+        <TextField fx:id="selectPluginTextField" />
+        <Button fx:id="selectPluginButton" onAction="#searchPlugin" text="Search" />
+            <JFXButton fx:id="importFrom" text="Import Plugin From File System" />
+        <padding>
+          <Insets bottom="10.0" />
+        </padding>
+      </HBox>
     </top>
     <center>
       <TableView fx:id="pluginDataTableView" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
@@ -47,6 +30,7 @@
           <TableColumn fx:id="nameTableColumn" prefWidth="75.0" text="Name" />
           <TableColumn fx:id="synopsisTableColumn" prefWidth="75.0" text="Version" />
           <TableColumn fx:id="versionTableColumn" prefWidth="75.0" text="Description" />
+          <TableColumn fx:id="isEnableTableColumn" prefWidth="126.0" text="Show in Menu" />
           <TableColumn fx:id="downloadTableColumn" prefWidth="67.0" text="Download" />
         </columns>
         <columnResizePolicy>

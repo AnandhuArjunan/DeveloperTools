@@ -1,120 +1,122 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import com.jfoenix.controls.JFXTabPane?>
 <?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.control.MenuItem?>
-<?import javafx.scene.control.TabPane?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="480.0" prefWidth="720.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.anandhuarjunan.developertools.core.controller.MainController">
-   <bottom>
-      <HBox alignment="CENTER_LEFT" spacing="10.0" BorderPane.alignment="CENTER">
-         <children>
-            <FontAwesomeIconView glyphName="COPYRIGHT" />
-            <Label fx:id="footerCopyright" text="Copyright 2021 - Anandhu Arjunan">
-               <font>
-                  <Font name="Calibri" size="12.0" />
-               </font>
-            </Label>
-         </children>
+<BorderPane prefHeight="720.0" prefWidth="1080.0" xmlns="http://javafx.com/javafx/8.0.291" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.anzoft.developertools.controller.MainController">
+   <center>
+      <VBox BorderPane.alignment="CENTER">
          <BorderPane.margin>
             <Insets />
          </BorderPane.margin>
-         <padding>
-            <Insets bottom="2.0" left="20.0" right="20.0" top="2.0" />
-         </padding>
-      </HBox>
-   </bottom>
-   <center>
-      <TabPane fx:id="tabs" focusTraversable="false" prefHeight="200.0" prefWidth="200.0" stylesheets="@../css/app/tabs.css" tabClosingPolicy="ALL_TABS" BorderPane.alignment="CENTER" />
-   </center>
-   <top>
-      <VBox alignment="CENTER" BorderPane.alignment="CENTER">
          <children>
-            <MenuBar fx:id="menuBar">
-              <menus>
-                <Menu mnemonicParsing="false" text="File">
-                  <items>
-                    <MenuItem mnemonicParsing="false" onAction="#onClickClose" text="Close" />
-                  </items>
-                </Menu>
-                <Menu mnemonicParsing="false" text="View">
-                  <items>
-                    <MenuItem mnemonicParsing="false" text="Delete" />
-                  </items>
-                </Menu>
-                <Menu fx:id="toolsMenu" mnemonicParsing="false" text="Tools &amp; Plugins" />
-                  <Menu mnemonicParsing="false" text="Manage">
-                    <items>
-                      <MenuItem fx:id="managePlugin" mnemonicParsing="false" text="Plugin Manager" />
-                        <MenuItem mnemonicParsing="false" text="Thread Manager" />
-                        <MenuItem fx:id="manageTool" mnemonicParsing="false" text="Tool Manager" />
-                        <MenuItem fx:id="manageServices" mnemonicParsing="false" text="Service Manager" />
-                    </items>
-                  </Menu>
-                  <Menu mnemonicParsing="false" text="Preferences">
-                     <items>
-                        <Menu fx:id="theme" mnemonicParsing="false" text="Themes" />
-                     </items>
-                  </Menu>
-                  <Menu mnemonicParsing="false" text="About">
-                    <items>
-                      <MenuItem fx:id="opnlic" mnemonicParsing="false" text="Open Source Libraries" />
-                        <MenuItem fx:id="abt_dev" mnemonicParsing="false" text="About Application" />
-                    </items>
-                  </Menu>
-              </menus>
-            </MenuBar>
-            <HBox alignment="CENTER_LEFT" spacing="10.0" styleClass="header_pane">
-               <children>
-                  <HBox alignment="CENTER" spacing="10.0">
-                     <children>
-                        <ImageView fitHeight="49.0" fitWidth="52.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../images/3d.png" />
-                           </image>
-                        </ImageView>
-                        <VBox alignment="CENTER_LEFT">
-                           <children>
-                              <Label fx:id="appname" text="DeveloperTools">
-                                 <font>
-                                    <Font name="Calibri Bold" size="24.0" />
-                                 </font>
-                              </Label>
-                              <Label fx:id="byWhom" text="By Anandhu Arjunan">
-                                 <font>
-                                    <Font name="Calibri" size="12.0" />
-                                 </font>
-                              </Label>
-                           </children>
-                        </VBox>
-                     </children>
-                     <HBox.margin>
-                        <Insets />
-                     </HBox.margin>
-                     <padding>
-                        <Insets bottom="5.0" left="10.0" right="5.0" top="5.0" />
-                     </padding>
-                  </HBox>
-                  <HBox alignment="CENTER_RIGHT" HBox.hgrow="ALWAYS">
-                     <children>
-                        <VBox fx:id="headerPanel" alignment="CENTER" HBox.hgrow="NEVER">
-                           <padding>
-                              <Insets right="10.0" />
-                           </padding></VBox>
-                     </children>
-                  </HBox>
-               </children>
+            <JFXTabPane fx:id="tabs" style="-fx-background-color: #f5f5f5;" tabClosingPolicy="ALL_TABS" VBox.vgrow="ALWAYS" />
+            <HBox fx:id="toolFooter" alignment="CENTER_RIGHT" spacing="10.0" style="-fx-background-color: #e0e0e0;">
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+               <padding>
+                  <Insets right="10.0" />
+               </padding>
             </HBox>
          </children>
       </VBox>
+   </center>
+   <bottom>
+      <HBox fx:id="footerHbox" alignment="CENTER" spacing="10.0" style="-fx-background-color: #263238;" BorderPane.alignment="CENTER">
+         <children>
+            <FontAwesomeIconView fill="WHITE" glyphName="COPYRIGHT" size="15" />
+            <Label fx:id="footerCopyright" lineSpacing="2.0" text="Copyright 2020 - Anandhu Arjunan" textFill="WHITE" HBox.hgrow="ALWAYS">
+               <font>
+                  <Font name="Calibri" size="15.0" />
+               </font>
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+            </Label>
+            <HBox fx:id="progressPane" alignment="CENTER_RIGHT" spacing="10.0" HBox.hgrow="ALWAYS">
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </padding>
+            </HBox>
+         </children>
+         <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </padding>
+      </HBox>
+   </bottom>
+   <top>
+      <AnchorPane fx:id="mainFrame" BorderPane.alignment="CENTER">
+         <children>
+            <MenuBar fx:id="menuBar" style="-fx-background-color: #b0bec5;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <menus>
+                  <Menu mnemonicParsing="false" text="File">
+                     <items>
+                        <MenuItem fx:id="closeBtn" mnemonicParsing="false" onAction="#onClickClose" text="Close" />
+                     </items>
+                  </Menu>
+                  <Menu fx:id="toolsMenu" mnemonicParsing="false" text="Tools &amp; Plugins" />
+                  <Menu mnemonicParsing="false" text="Manage">
+                     <items>
+                        <MenuItem fx:id="managePlugin" mnemonicParsing="false" text="Plugin Manager" />
+                        <MenuItem fx:id="manageTool" mnemonicParsing="false" text="Tools Manager" />
+                        <MenuItem fx:id="manageServices" mnemonicParsing="false" text="Service Manager" />
+                     </items>
+                  </Menu>
+                  <Menu mnemonicParsing="false" text="Preferences">
+                     <items>
+                        <Menu fx:id="theme" mnemonicParsing="false" text="Theme" />
+                        <MenuItem fx:id="lblEditor" mnemonicParsing="false" onAction="#onClickLabelEditor" text="Tool Editor" />
+                     </items>
+                  </Menu>
+                  <Menu mnemonicParsing="false" text="About">
+                     <items>
+                        <MenuItem fx:id="opnlic" mnemonicParsing="false" onAction="#onClickMenu" text="Open Source Libraries" />
+                        <MenuItem fx:id="abt_dev" mnemonicParsing="false" onAction="#onClickMenu" text="About Application" />
+                     </items>
+                  </Menu>
+               </menus>
+            </MenuBar>
+            <HBox alignment="CENTER_LEFT" layoutY="32.0" spacing="20.0" style="-fx-background-color: #eceff1;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="32.0">
+               <children>
+                  <VBox alignment="CENTER_RIGHT">
+                     <children>
+                        <Label fx:id="appname" style="" text=" Developer Tools">
+                           <font>
+                              <Font name="Calibri Bold" size="32.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="byWhom" alignment="CENTER" text="By Anandhu Arjunan" textFill="#030303">
+                           <font>
+                              <Font name="Calibri" size="14.0" />
+                           </font>
+                        </Label>
+                     </children>
+                     <padding>
+                        <Insets bottom="20.0" left="25.0" right="20.0" top="20.0" />
+                     </padding>
+                  </VBox>
+                  <AnchorPane HBox.hgrow="ALWAYS">
+                     <children>
+                        <VBox fx:id="headerPanel" alignment="CENTER" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <padding>
+                              <Insets right="20.0" />
+                           </padding></VBox>
+                     </children>
+                  </AnchorPane>
+               </children>
+            </HBox>
+         </children>
+      </AnchorPane>
    </top>
 </BorderPane>
