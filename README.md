@@ -102,3 +102,6 @@ Want to contribute? Great! Thank you for showing interest in this Project.
 Apache 2.0
 
 **Free Software, Hell Yeah!**
+
+
+mvn archetype:generate -DarchetypeGroupId=com.anandhuarjunan.developertools -DarchetypeArtifactId=dtplugins-maven-archetype -DarchetypeVersion=0.0.1-SNAPSHOT -DgroupId=com.anandhuarjunan.developertools -DartifactId=stringtools -Dversion=0.0.1-SNAPSHOT

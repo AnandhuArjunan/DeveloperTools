@@ -3,12 +3,12 @@
    <modelVersion>4.0.0</modelVersion>
    <groupId>com.anandhuarjunan</groupId>
    <artifactId>developer-tools</artifactId>
-   <version>1.0-SNAPSHOT</version>
-   <name>developer-tools</name>
+   <version>2.0-SNAPSHOT</version>
+   <name>Developer Tools</name>
    <url>http://maven.apache.org</url>
    <properties>
       <deployDir>${project.basedir}/deploy/DeveloperTools/</deployDir>
-      <javaFXMainClass>com.anandhuarjunan.developertools.core.app.DeveloperTools</javaFXMainClass>
+      <javaFXMainClass>com.anandhuarjunan.developertools.MainApp</javaFXMainClass>
       <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
       <maven.compiler.target>17</maven.compiler.target>
       <maven.compiler.source>17</maven.compiler.source>
@@ -71,7 +71,7 @@
                      <descriptors>
                                
                        </descriptors>
-                                       <outputDirectory>${deployDir}</outputDirectory>
+                     <outputDirectory>${deployDir}</outputDirectory>
                        
                   </configuration>
                </execution>
@@ -97,48 +97,36 @@
          <version>1.8</version>
       </dependency>
       <dependency>
-         <groupId>com.anzoft</groupId>
-         <artifactId>common-libs</artifactId>
-         <version>0.0.1-SNAPSHOT</version>
-      </dependency>
-      <!-- https://mvnrepository.com/artifact/commons-io/commons-io -->
-      <dependency>
          <groupId>commons-io</groupId>
          <artifactId>commons-io</artifactId>
          <version>2.6</version>
       </dependency>
-      <!-- https://mvnrepository.com/artifact/org.apache.commons/commons-compress -->
       <dependency>
          <groupId>org.apache.commons</groupId>
          <artifactId>commons-compress</artifactId>
          <version>1.20</version>
       </dependency>
-      <!-- https://mvnrepository.com/artifact/org.apache.commons/commons-configuration2 -->
       <dependency>
          <groupId>org.apache.commons</groupId>
          <artifactId>commons-configuration2</artifactId>
          <version>2.7</version>
       </dependency>
-      <!-- https://mvnrepository.com/artifact/commons-beanutils/commons-beanutils -->
       <dependency>
          <groupId>commons-beanutils</groupId>
          <artifactId>commons-beanutils</artifactId>
          <version>1.9.4</version>
       </dependency>
-      <!-- Added in local repository -->
       <dependency>
          <groupId>com.procyon</groupId>
          <artifactId>decompiler</artifactId>
          <version>0.5.36</version>
          <scope>provided</scope>
       </dependency>
-      <!-- Added in local repository -->
       <dependency>
          <groupId>com.anzoft</groupId>
          <artifactId>javasyntaxhighlighter</artifactId>
          <version>0.0.1-SNAPSHOT</version>
       </dependency>
-      <!-- https://mvnrepository.com/artifact/org.jsoup/jsoup -->
       <dependency>
          <groupId>org.jsoup</groupId>
          <artifactId>jsoup</artifactId>
@@ -149,7 +137,6 @@
          <artifactId>richtextfx</artifactId>
          <version>0.10.6</version>
       </dependency>
-      <!-- https://mvnrepository.com/artifact/org.apache.commons/commons-exec -->
       <dependency>
          <groupId>org.apache.commons</groupId>
          <artifactId>commons-exec</artifactId>
@@ -165,8 +152,6 @@
          <artifactId>jiconfont-javafx</artifactId>
          <version>1.0.0</version>
       </dependency>
-      <!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-entitymanager -->
-      <!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-core -->
       <dependency>
          <groupId>org.hibernate</groupId>
          <artifactId>hibernate-core</artifactId>
@@ -178,52 +163,23 @@
          <version>10.14.2.0</version>
          <scope>runtime</scope>
       </dependency>
-      <!-- an slf4j implementation is needed by hibernate so that it could log 
-			its *stuff* -->
       <dependency>
          <groupId>org.slf4j</groupId>
          <artifactId>slf4j-simple</artifactId>
          <version>1.6.4</version>
          <scope>runtime</scope>
       </dependency>
-      <!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-search-orm -->
-      <dependency>
-         <groupId>de.jensd</groupId>
-         <artifactId>fontawesomefx-commons</artifactId>
-         <version>9.1.2</version>
-      </dependency>
-      <dependency>
-         <groupId>de.jensd</groupId>
-         <artifactId>fontawesomefx-controls</artifactId>
-         <version>9.1.2</version>
-      </dependency>
-      <dependency>
-         <groupId>de.jensd</groupId>
-         <artifactId>fontawesomefx-materialicons</artifactId>
-         <version>2.2.0-9.1.2</version>
-      </dependency>
-      <!-- https://mvnrepository.com/artifact/de.jensd/fontawesomefx-fontawesome -->
-      <dependency>
-         <groupId>de.jensd</groupId>
-         <artifactId>fontawesomefx-fontawesome</artifactId>
-         <version>4.7.0-9.1.2</version>
-      </dependency>
       <dependency>
          <groupId>com.google</groupId>
          <artifactId>javaformat</artifactId>
          <version>1.0</version>
       </dependency>
-      <!-- <dependency> <groupId>com</groupId> <artifactId>richtext</artifactId> 
-			<version>1.0</version> </dependency> -->
-      <!-- <dependency> <groupId>com.github.plushaze.traynotification</groupId> 
-			<artifactId>TrayNotification</artifactId> <version>0.3</version> </dependency> -->
       <dependency>
          <groupId>org.zeroturnaround</groupId>
          <artifactId>zt-zip</artifactId>
          <version>1.14</version>
          <type>jar</type>
       </dependency>
-      <!-- https://mvnrepository.com/artifact/log4j/log4j -->
       <dependency>
          <groupId>log4j</groupId>
          <artifactId>log4j</artifactId>
@@ -245,45 +201,30 @@
          <version>1.18.20</version>
          <scope>provided</scope>
       </dependency>
-      <dependency>
-         <groupId>org.openjfx</groupId>
-         <artifactId>javafx-controls</artifactId>
-         <version>16</version>
-      </dependency>
-      <dependency>
-         <groupId>org.openjfx</groupId>
-         <artifactId>javafx-media</artifactId>
-         <version>16</version>
-      </dependency>
-      <dependency>
-         <groupId>org.openjfx</groupId>
-         <artifactId>javafx-web</artifactId>
-         <version>16</version>
-      </dependency>
-      <dependency>
-         <groupId>org.openjfx</groupId>
-         <artifactId>javafx-fxml</artifactId>
-         <version>16</version>
-      </dependency>
-      <!-- https://mvnrepository.com/artifact/org.openjfx/javafx-swing -->
-      <dependency>
-         <groupId>org.openjfx</groupId>
-         <artifactId>javafx-swing</artifactId>
-         <version>16</version>
-      </dependency>
-      <dependency>
-         <groupId>io.github.palexdev</groupId>
-         <artifactId>materialfx</artifactId>
-         <version>11.12.0</version>
-      </dependency>
-      <!-- https://mvnrepository.com/artifact/com.github.oshi/oshi-core -->
+ <dependency>
+    <groupId>com.fasterxml.jackson.core</groupId>
+    <artifactId>jackson-databind</artifactId>
+    <version>2.16.1</version> <!-- Replace with the latest version -->
+</dependency>
+      
 <dependency>
     <groupId>com.github.oshi</groupId>
     <artifactId>oshi-core</artifactId>
     <version>5.8.2</version>
 </dependency>
+<dependency>
+    <groupId>org.reflections</groupId>
+    <artifactId>reflections</artifactId>
+    <version>0.9.12</version> <!-- Adjust version as needed -->
+</dependency>
+ 
+   		 <dependency>
+         <groupId>com.anandhuarjunan</groupId>
+         <artifactId>jfxawesome</artifactId>
+         <version>1.0.0-SNAPSHOT</version>
+      </dependency>
+   <!-- https://mvnrepository.com/artifact/org.hibernate.validator/hibernate-validator -->
 
 
-      
    </dependencies>
 </project>
