@@ -29,7 +29,6 @@ import com.anandhuarjunan.developertools.exceptions.ServiceException;
 import com.anandhuarjunan.developertools.utils.HibernateUtils;
 import com.anandhuarjunan.developertools.utils.JarUtils;
 import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 
@@ -101,6 +100,8 @@ public class PluginsLoader {
 							tools.setToolPlgin(plugins);
 							tools.setToolImplementation(annotatedClass.getName());
 							tools.setToolCategory(tool.category()!=null?String.join(", ", tool.category()):null);
+							tools.setIsclosable(tool.closable());
+							tools.setIsMultiInstance(tool.multiInstance());
 							truncate("TOOLS");
 							truncate("PLUGINS");
 

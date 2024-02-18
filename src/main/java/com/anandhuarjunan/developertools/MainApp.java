@@ -13,7 +13,7 @@ import com.anandhuarjunan.jfxawesome.annotations.MaterialWithHeadingThemeForFxml
 
 
 @MaterialWithHeadingThemeForFxmlView
-(appIcon = "", headingData = { "Developer Tools" ,"Simple Tools for Productivity" }, headingIcon = Material.CASINO, tweak = { Tweaks.STRETCH_TO_PARENT }, view = MainView.class)
+(appIcon = "", headingData = { "Developer Tools" ,"Simple Tools for Productivity" }, headingIcon = Material.CASINO, tweak = { Tweaks.STRETCH_TO_PARENT,Tweaks.ADD_THEME_CHANGER }, view = MainView.class)
 public class MainApp  {
 	
 	@InitApplication

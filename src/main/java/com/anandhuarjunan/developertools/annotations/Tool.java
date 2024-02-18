@@ -12,5 +12,7 @@ public @interface Tool {
   String name();
   String description();
   String[] category();
-
+  boolean multiInstance() default false;
+  boolean closable() default true;
+  
 }

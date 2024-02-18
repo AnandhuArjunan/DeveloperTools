@@ -83,10 +83,17 @@ public class MainPresenter implements Initializable {
 		try {
 			toolLoader = new ToolLoader(tabPane);
 			loadToolsInMenu();
+			loadDashboard();
 		}catch (ServiceException e) {
 			
 		}
 
+		
+	}
+
+	private void loadDashboard() {
+		DashboardView dashboardView = new DashboardView();
+		toolLoader.addTab("Dashboard", dashboardView.getView(),false,null);
 		
 	}
 

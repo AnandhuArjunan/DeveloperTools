@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import io.github.palexdev.materialfx.controls.MFXScrollPane?>
+<?import io.github.palexdev.materialfx.controls.MFXTextField?>
+<?import io.github.palexdev.materialfx.font.MFXFontIcon?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox alignment="CENTER" spacing="30.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.anandhuarjunan.developertools.views.DashboardHomePresenter">
+   <children>
+      <HBox spacing="10.0">
+         <children>
+            <VBox style="-fx-background-color: -bgcolor2;" styleClass="border-rad2">
+               <children>
+                  <Label graphicTextGap="10.0" style="-fx-font-size: 17;" text="Tools">
+                     <padding>
+                        <Insets left="10.0" />
+                     </padding>
+                     <graphic>
+                        <MFXFontIcon description="mfx-folder" size="20.0" />
+                     </graphic>
+                  </Label>
+                  <VBox alignment="CENTER_LEFT" spacing="10.0">
+                     <children>
+                        <Label graphicTextGap="10.0" style="-fx-font-size: 15;" text="Search">
+                           <graphic>
+                              <MFXFontIcon description="mfx-filter" size="15.0" />
+                           </graphic>
+                        </Label>
+                        <MFXTextField floatMode="DISABLED" focusTraversable="false" prefHeight="40.0" prefWidth="200.0" />
+                     </children>
+                     <padding>
+                        <Insets bottom="25.0" left="25.0" right="25.0" top="25.0" />
+                     </padding>
+                  </VBox>
+               </children>
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="20.0" />
+               </padding>
+            </VBox>
+            <VBox style="-fx-background-color: -bgcolor2;" styleClass="border-rad2" HBox.hgrow="ALWAYS">
+               <children>
+                  <Label graphicTextGap="10.0" style="-fx-font-size: 17;" text="Plugins">
+                     <padding>
+                        <Insets left="10.0" />
+                     </padding>
+                     <graphic>
+                        <MFXFontIcon description="mfx-chart-pie" size="20.0" />
+                     </graphic>
+                  </Label>
+               </children>
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="20.0" />
+               </padding>
+            </VBox>
+         </children>
+      </HBox>
+      <VBox VBox.vgrow="ALWAYS">
+         <children>
+            <Label graphicTextGap="10.0" style="-fx-font-size: 17;" text="Widgets">
+               <VBox.margin>
+                  <Insets left="10.0" />
+               </VBox.margin>
+               <graphic>
+                  <MFXFontIcon description="mfx-circle" size="20.0" />
+               </graphic>
+            </Label>
+            <MFXScrollPane fitToHeight="true" fitToWidth="true" style="-fx-background-color: transparent;" styleClass="border-rad2">
+               <content>
+                  <FlowPane />
+               </content>
+            </MFXScrollPane>
+         </children>
+         <VBox.margin>
+            <Insets />
+         </VBox.margin>
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="20.0" />
+         </padding>
+      </VBox>
+      <HBox spacing="10.0" VBox.vgrow="ALWAYS">
+         <children>
+            <VBox style="-fx-background-color: -bgcolor2;" styleClass="border-rad2" HBox.hgrow="ALWAYS">
+               <children>
+                  <Label graphicTextGap="10.0" style="-fx-font-size: 17;" text="Bookmarked">
+                     <VBox.margin>
+                        <Insets left="10.0" />
+                     </VBox.margin>
+                     <graphic>
+                        <MFXFontIcon description="mfx-shortcut" size="20.0" />
+                     </graphic>
+                  </Label>
+                  <MFXScrollPane fitToWidth="true" style="-fx-background-color: transparent;" VBox.vgrow="ALWAYS">
+                     <content>
+                        <FlowPane style="-fx-background-color: transparent;" />
+                     </content>
+                  </MFXScrollPane>
+               </children>
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="20.0" />
+               </padding>
+            </VBox>
+            <VBox style="-fx-background-color: -bgcolor2;" styleClass="border-rad2" HBox.hgrow="ALWAYS">
+               <children>
+                  <Label graphicTextGap="10.0" style="-fx-font-size: 17;" text="Recently Opened">
+                     <VBox.margin>
+                        <Insets left="10.0" />
+                     </VBox.margin>
+                     <graphic>
+                        <MFXFontIcon description="mfx-undo" size="20.0" />
+                     </graphic>
+                  </Label>
+                  <MFXScrollPane fitToWidth="true" style="-fx-background-color: transparent;" VBox.vgrow="ALWAYS">
+                     <content>
+                        <FlowPane style="-fx-background-color: transparent;" />
+                     </content>
+                  </MFXScrollPane>
+               </children>
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="20.0" />
+               </padding>
+            </VBox>
+         </children>
+      </HBox>
+   </children>
+   <padding>
+      <Insets bottom="30.0" left="30.0" right="30.0" top="30.0" />
+   </padding>
+</VBox>

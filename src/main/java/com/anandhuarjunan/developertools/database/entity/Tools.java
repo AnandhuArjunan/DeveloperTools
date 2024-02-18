@@ -35,6 +35,15 @@ public class Tools {
 
 	@Column(name = "TOOL_IMPLEMENTATION")
 	private String toolImplementation;
+	
+	@Column(name = "TOOL_CLOSABLE")
+	private Boolean isclosable;
+	
+	@Column(name = "TOOL_MULTIINSTANCE")
+	private Boolean isMultiInstance;
+	
+
+	
 
 
 }
