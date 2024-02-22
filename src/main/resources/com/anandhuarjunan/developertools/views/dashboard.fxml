@@ -45,7 +45,7 @@
       </VBox>
    </left>
    <center>
-      <StackPane fx:id="dashboardContent" minHeight="600.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+      <StackPane fx:id="dashboardContent" BorderPane.alignment="CENTER">
          <BorderPane.margin>
             <Insets left="20.0" />
          </BorderPane.margin>
