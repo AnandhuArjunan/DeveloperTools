@@ -6,6 +6,8 @@ import java.util.Optional;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
+import org.kordamp.ikonli.javafx.FontIcon;
+
 import com.anandhuarjunan.developertools.annotations.FXMLMapping;
 import com.anandhuarjunan.developertools.annotations.Node;
 import com.anandhuarjunan.developertools.database.entity.Tools;
@@ -33,16 +35,6 @@ public class ToolLoader {
 
 
 	public void loadTool(Tools tool) {
-		
-		new Task<Void>() {
-
-			@Override
-			protected Void call() throws Exception {
-			
-				return null;
-			}
-		};
-		
 
 		try {
 			Class<?> clazz = Class.forName(tool.getToolImplementation());
@@ -108,6 +100,7 @@ public class ToolLoader {
 			content.getStyleClass().add("border-rad2");
 			tab.setContent(borderPane);
 			tab.setClosable(isclosable);
+			tab.setGraphic(new FontIcon("gmi-apps") {{setIconSize(20);}});
 			tab.setUserData(userData);
 			pane.getTabs().add(tab);
 	}

@@ -2,12 +2,12 @@
 
 <?import io.github.palexdev.materialfx.controls.MFXScrollPane?>
 <?import io.github.palexdev.materialfx.controls.MFXTextField?>
-<?import io.github.palexdev.materialfx.font.MFXFontIcon?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.FlowPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
+<?import org.kordamp.ikonli.javafx.FontIcon?>
 
 <VBox alignment="CENTER" minHeight="0.0" minWidth="0.0" spacing="30.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.anandhuarjunan.developertools.views.DashboardHomePresenter">
    <children>
@@ -20,14 +20,14 @@
                         <Insets left="10.0" />
                      </padding>
                      <graphic>
-                        <MFXFontIcon description="mfx-folder" size="20.0" />
+                        <FontIcon iconLiteral="gmi-dashboard" iconSize="25" />
                      </graphic>
                   </Label>
                   <VBox alignment="CENTER_LEFT" spacing="10.0">
                      <children>
-                        <Label graphicTextGap="10.0" style="-fx-font-size: 15;" text="Search">
+                        <Label graphicTextGap="1.0" style="-fx-font-size: 15;" text="Search">
                            <graphic>
-                              <MFXFontIcon description="mfx-filter" size="15.0" />
+                              <FontIcon iconLiteral="gmi-search" iconSize="20" />
                            </graphic>
                         </Label>
                         <MFXTextField floatMode="DISABLED" focusTraversable="false" prefHeight="40.0" prefWidth="200.0" />
@@ -48,7 +48,7 @@
                         <Insets left="10.0" />
                      </padding>
                      <graphic>
-                        <MFXFontIcon description="mfx-chart-pie" size="20.0" />
+                        <FontIcon iconLiteral="gmi-extension" iconSize="25" />
                      </graphic>
                   </Label>
                </children>
@@ -65,7 +65,7 @@
                   <Insets left="10.0" />
                </VBox.margin>
                <graphic>
-                  <MFXFontIcon description="mfx-circle" size="20.0" />
+                  <FontIcon iconLiteral="gmi-view-agenda" iconSize="25" />
                </graphic>
             </Label>
             <MFXScrollPane fitToHeight="true" fitToWidth="true" style="-fx-background-color: transparent;" styleClass="border-rad2">
@@ -90,7 +90,7 @@
                         <Insets left="10.0" />
                      </VBox.margin>
                      <graphic>
-                        <MFXFontIcon description="mfx-shortcut" size="20.0" />
+                        <FontIcon iconLiteral="gmi-bookmark-border" iconSize="25" />
                      </graphic>
                   </Label>
                   <MFXScrollPane fitToWidth="true" style="-fx-background-color: transparent;" VBox.vgrow="ALWAYS">
@@ -110,7 +110,7 @@
                         <Insets left="10.0" />
                      </VBox.margin>
                      <graphic>
-                        <MFXFontIcon description="mfx-undo" size="20.0" />
+                        <FontIcon iconLiteral="gmi-double-arrow" iconSize="25" />
                      </graphic>
                   </Label>
                   <MFXScrollPane fitToWidth="true" style="-fx-background-color: transparent;" VBox.vgrow="ALWAYS">

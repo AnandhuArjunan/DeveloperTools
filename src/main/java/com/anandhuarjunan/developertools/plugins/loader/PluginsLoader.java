@@ -44,6 +44,7 @@ public class PluginsLoader {
 	private static final String PLUGIN_META = "plugin.json";
 
 	public void scanAndLoad() {
+		clearToolPluginInfo();
 		File libPath = new File(PLUGINS_PATH);
 		File[] plugins = libPath.listFiles((dir, name) -> name.endsWith(".jar"));
 		for (File plugin : plugins) {
@@ -74,6 +75,11 @@ public class PluginsLoader {
 			}
 		}
 	}
+	
+	private void clearToolPluginInfo() {
+		truncate("TOOLS");
+		truncate("PLUGINS");
+	}
 
 	private void loadPlugin(File file ,Plugin pluginMeta) {
 	        String packageToScan = pluginMeta.getGroupId() + "." + pluginMeta.getArtifactId(); // Replace with your package name
@@ -102,12 +108,7 @@ public class PluginsLoader {
 							tools.setToolCategory(tool.category()!=null?String.join(", ", tool.category()):null);
 							tools.setIsclosable(tool.closable());
 							tools.setIsMultiInstance(tool.multiInstance());
-							truncate("TOOLS");
-							truncate("PLUGINS");
-
 							persistEntity.persist(tools);
-							
-							
 						}
 					}
 				
