@@ -56,6 +56,7 @@ public class DashboardPresenter implements Initializable
 		
 		simpleViewSwitcher.addView(ViewSwitcherBean.builder().ofDefault(true).ofActionButton(createToggle("mfx-home", "Home")).ofView(dashboardHomeView).get());
 		simpleViewSwitcher.addView(ViewSwitcherBean.builder().ofActionButton(createToggle("mfx-circle-dot", "Tools Marketplace")).ofView(dashboardHomeView).get());
+		simpleViewSwitcher.addView(ViewSwitcherBean.builder().ofActionButton(createToggle("mfx-circle-dot", "Simple Tool Creator")).ofView(new SimpleToolCreatorView()).get());
 
 		simpleViewSwitcher.addContentPane(dashboardContent);
 		simpleViewSwitcher.addToggleBar(navBar);

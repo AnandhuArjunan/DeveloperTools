@@ -1,10 +1,10 @@
 package com.anandhuarjunan.developertools;
 
+import java.io.StringWriter;
+
 import org.kordamp.ikonli.material.Material;
-import org.hibernate.Session;
 
 import com.anandhuarjunan.developertools.plugins.loader.PluginsLoader;
-import com.anandhuarjunan.developertools.utils.HibernateUtils;
 import com.anandhuarjunan.developertools.views.MainView;
 import com.anandhuarjunan.jfxawesome.AwesomeApplication;
 import com.anandhuarjunan.jfxawesome.Tweaks;
@@ -24,6 +24,7 @@ public class MainApp  {
 	
 	public static void main(String[] args) {
 		AwesomeApplication.run(MainApp.class,args);
+		
 	}
 
 	}

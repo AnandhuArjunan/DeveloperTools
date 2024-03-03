@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import io.github.palexdev.materialfx.controls.MFXCheckbox?>
+<?import io.github.palexdev.materialfx.controls.MFXTextField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import org.kordamp.ikonli.javafx.FontIcon?>
+
+<BorderPane minHeight="0.0" minWidth="0.0" style="-fx-background-color: transparent;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.anandhuarjunan.developertools.views.SimpleToolCreatorPresenter">
+   <center>
+      <SplitPane dividerPositions="0.8" style="-fx-background-color: transparent;" BorderPane.alignment="CENTER">
+         <BorderPane.margin>
+            <Insets top="20.0" />
+         </BorderPane.margin>
+         <items>
+            <VBox spacing="10.0">
+               <children>
+                  <ToolBar VBox.vgrow="ALWAYS">
+                     <items>
+                        <Label style="-fx-font-size: 15;" text="Code">
+                           <graphic>
+                              <FontIcon iconLiteral="gmi-code" iconSize="20" />
+                           </graphic>
+                        </Label>
+                        <Separator orientation="VERTICAL" />
+                        <Button mnemonicParsing="false" text="Reset">
+                           <graphic>
+                              <FontIcon iconLiteral="gmi-settings-backup-restore" iconSize="20" />
+                           </graphic>
+                        </Button>
+                     </items>
+                     <VBox.margin>
+                        <Insets right="10.0" />
+                     </VBox.margin>
+                  </ToolBar>
+                  <TextArea fx:id="code" VBox.vgrow="ALWAYS">
+                     <VBox.margin>
+                        <Insets bottom="10.0" right="10.0" />
+                     </VBox.margin>
+                  </TextArea>
+               </children>
+               <padding>
+                  <Insets left="10.0" top="10.0" />
+               </padding>
+            </VBox>
+            <VBox spacing="10.0">
+               <children>
+                  <Label graphicTextGap="8.0" style="-fx-font-size: 15;" text="Log">
+                     <graphic>
+                        <FontIcon iconLiteral="gmi-insert-comment" iconSize="20" />
+                     </graphic></Label>
+                  <TextArea fx:id="log" editable="false" VBox.vgrow="ALWAYS">
+                     <VBox.margin>
+                        <Insets bottom="10.0" right="10.0" />
+                     </VBox.margin>
+                  </TextArea>
+               </children>
+               <padding>
+                  <Insets left="10.0" top="10.0" />
+               </padding>
+            </VBox>
+         </items>
+      </SplitPane>
+   </center>
+   <bottom>
+      <HBox spacing="10.0" BorderPane.alignment="CENTER">
+         <BorderPane.margin>
+            <Insets left="8.0" top="20.0" />
+         </BorderPane.margin>
+         <children>
+            <Button fx:id="compile" graphicTextGap="8.0" mnemonicParsing="false" style="-fx-font-size: 13;" text="Compile and Test">
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </padding>
+               <graphic>
+                  <FontIcon iconLiteral="gmi-settings-input-composite" iconSize="20" />
+               </graphic>
+            </Button>
+            <Button fx:id="compile1" graphicTextGap="8.0" mnemonicParsing="false" style="-fx-font-size: 13;" text="Add As Tool">
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </padding>
+               <graphic>
+                  <FontIcon iconLiteral="gmi-library-add" iconSize="20" />
+               </graphic>
+            </Button>
+         </children>
+      </HBox>
+   </bottom>
+   <padding>
+      <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+   </padding>
+   <top>
+      <VBox spacing="5.0" BorderPane.alignment="CENTER">
+         <children>
+            <Pane>
+               <children>
+                  <Label style="-fx-background-color: -bgcolor2; -fx-border-radius: 5; -fx-font-size: 15; -fx-background-radius: 5;" text="This works only if the DeveloperTools is running on JDK not JRE !">
+                     <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </padding>
+                     <graphic>
+                        <FontIcon iconLiteral="gmi-info-outline" iconSize="20" />
+                     </graphic>
+                  </Label>
+               </children>
+               <VBox.margin>
+                  <Insets bottom="20.0" />
+               </VBox.margin>
+            </Pane>
+            <HBox alignment="CENTER_LEFT" spacing="20.0">
+               <children>
+                  <VBox spacing="10.0">
+                     <children>
+                        <MFXTextField fx:id="packageName" borderGap="5.0" floatingText="Package Name" floatingTextGap="1.0" graphicTextGap="5.0" prefWidth="238.0" text="com.test">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </MFXTextField>
+                        <MFXTextField fx:id="classname" borderGap="5.0" floatingText="Class name" floatingTextGap="1.0" graphicTextGap="5.0" prefWidth="238.0" text="Test">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </MFXTextField>
+                     </children>
+                  </VBox>
+                  <VBox spacing="10.0">
+                     <children>
+                        <MFXTextField fx:id="toolName" borderGap="5.0" floatingText="Tool Name" floatingTextGap="1.0" graphicTextGap="5.0" prefWidth="238.0" text="com.test">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </MFXTextField>
+                        <MFXTextField fx:id="toolDescription" borderGap="5.0" floatingText="Tool Description" floatingTextGap="1.0" graphicTextGap="5.0" prefWidth="238.0" text="Test">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </MFXTextField>
+                     </children>
+                  </VBox>
+                  <VBox spacing="10.0">
+                     <children>
+                        <MFXTextField fx:id="toolCategory" borderGap="5.0" floatingText="Tool Category" floatingTextGap="1.0" graphicTextGap="5.0" prefWidth="238.0" text="Created">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </MFXTextField>
+                        <MFXCheckbox fx:id="multiinstance" text="Multi Instance" />
+                        <MFXCheckbox fx:id="closable" text="Closable" />
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </top>
+</BorderPane>

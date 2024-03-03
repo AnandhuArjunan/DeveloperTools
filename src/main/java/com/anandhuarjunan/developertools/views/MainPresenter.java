@@ -22,6 +22,7 @@ import com.anandhuarjunan.developertools.database.services.common.GetAllEntitySe
 import com.anandhuarjunan.developertools.exceptions.ServiceException;
 import com.anandhuarjunan.developertools.helper.ToolLoader;
 import com.anandhuarjunan.developertools.utils.HibernateUtils;
+import com.anandhuarjunan.jfxawesome.injection.Injector;
 
 import io.github.palexdev.materialfx.controls.MFXIconWrapper;
 import io.github.palexdev.materialfx.controls.MFXRectangleToggleNode;
@@ -82,6 +83,7 @@ public class MainPresenter implements Initializable {
 	public void initialize(URL location, ResourceBundle resources) {
 		try {
 			toolLoader = new ToolLoader(tabPane);
+			Injector.addToGlobalInjectionContext(Map.of("toolLoader",toolLoader));
 			loadToolsInMenu();
 			loadDashboard();
 		}catch (ServiceException e) {

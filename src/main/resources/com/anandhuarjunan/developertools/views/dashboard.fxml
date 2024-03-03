@@ -45,10 +45,10 @@
       </VBox>
    </left>
    <center>
-      <StackPane fx:id="dashboardContent" BorderPane.alignment="CENTER">
-         <BorderPane.margin>
-            <Insets left="20.0" />
-         </BorderPane.margin>
-      </StackPane>
+      <MFXScrollPane fitToHeight="true" fitToWidth="true" prefViewportHeight="400.0" prefViewportWidth="450.0" style="-fx-background-color: transparent;" BorderPane.alignment="CENTER">
+         <content>
+            <StackPane fx:id="dashboardContent" />
+         </content>
+      </MFXScrollPane>
    </center>
 </BorderPane>

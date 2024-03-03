@@ -40,9 +40,7 @@ public class ToolLoader {
 			Class<?> clazz = Class.forName(tool.getToolImplementation());
 			
 			if(FXMLView.class.isAssignableFrom(clazz)) {
-				Tab tab = new Tab(tool.getToolName());
-				tab.setContent(((FXMLView)clazz.getConstructor().newInstance()).getView());
-				pane.getTabs().add(tab);
+				addTab(tool,((FXMLView)clazz.getConstructor().newInstance()).getView());
 			}else if(Initializable.class.isAssignableFrom(clazz)) {
 				if(clazz.isAnnotationPresent(FXMLMapping.class)) {
 					 FXMLMapping fxmlMapping = clazz.getAnnotation(FXMLMapping.class);
@@ -51,7 +49,6 @@ public class ToolLoader {
 					 }
 				}
 			}else {
-				
 				Object instance = 	clazz.getConstructor().newInstance(); 
 				Method[] methods = clazz.getDeclaredMethods();
 				if(methods == null || methods.length == 0) {
