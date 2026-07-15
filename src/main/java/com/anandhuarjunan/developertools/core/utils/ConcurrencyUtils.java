@@ -9,9 +9,12 @@ import com.google.common.util.concurrent.ThreadFactoryBuilder;
 import javafx.concurrent.Task;
 
 public class ConcurrencyUtils {
+    
+    private ConcurrencyUtils() {}
 
 public static void fxTaskExecuter(Task<?> task)  {
 	Thread thread = new Thread(task);
+	thread.setDaemon(true);
 	thread.start();
 }
 	

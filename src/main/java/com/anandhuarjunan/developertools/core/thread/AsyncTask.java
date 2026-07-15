@@ -15,7 +15,7 @@ public abstract class AsyncTask<T1, T2, T3> {
 	
 	private boolean daemon = true;
 
-	private T1[] params;
+	private volatile T1[] params;
 
 	public abstract void onPreExecute();
 
@@ -31,7 +31,7 @@ public abstract class AsyncTask<T1, T2, T3> {
 		Platform.runLater(() -> progressCallback(progressParams));
 	}
 
-	public final Thread backGroundThread = new Thread(new Runnable() {
+	private final Thread backGroundThread = new Thread(new Runnable() {
 		@Override
 		public void run() {
 
@@ -68,4 +68,7 @@ public abstract class AsyncTask<T1, T2, T3> {
 		 this.backGroundThread.interrupt();
 	}
 	
+	public Thread getBackGroundThread() {
+	    return backGroundThread;
+	}
 }

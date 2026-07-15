@@ -30,9 +30,14 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TreeItem;
 import javafx.stage.FileChooser;
 
-public class Decompiler extends AbstractTool {
+import java.util.logging.Logger;
+import java.util.logging.Level;
 
-	File currentFile = null;
+public class Decompiler extends AbstractTool {
+    
+    private static final Logger LOGGER = Logger.getLogger(Decompiler.class.getName());
+
+	private File currentFile = null;
 	private ProgressPane pgPane= null;
 	TreeListWebViewStyle webViewStyle = new TreeListWebViewStyle();
 	
@@ -73,10 +78,10 @@ public class Decompiler extends AbstractTool {
 				try {
 					service.submit(new JarLoaderThread(inputJar));
 				} catch (InternalError e1) {
-					// TODO Auto-generated catch block
-					e1.printStackTrace();
+					LOGGER.log(Level.SEVERE, "Error loading jar", e1);
+				} finally {
+				    service.shutdown();
 				}
-				service.shutdown();
 			}
 
 		});
@@ -87,7 +92,7 @@ public class Decompiler extends AbstractTool {
 				try {
 					process();
 				} catch (InternalError e) {
-					e.printStackTrace();
+					LOGGER.log(Level.SEVERE, "Error in process", e);
 				}
 			}
 
@@ -127,7 +132,7 @@ public class Decompiler extends AbstractTool {
 			try {
 				loadFileTree(inputJar);
 			} catch (IOException e) {
-				//
+				LOGGER.log(Level.SEVERE, "Error loading file tree", e);
 			}
 
 		}

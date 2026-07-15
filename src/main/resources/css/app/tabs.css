@@ -1,37 +1,47 @@
+/* Modern Tab Pane Styling */
 .tab-pane .tab-header-area .tab-header-background {
     -fx-opacity: 0;
 }
 
-.tab-pane
-{
-    -fx-tab-min-width:90px;
+.tab-pane {
+    -fx-tab-min-width: 100px;
+    -fx-tab-max-height: 36px;
+    -fx-padding: 0;
 }
 
-.tab{
-    -fx-background-insets: 0 1 0 1,0,0;
+.tab {
+    -fx-background-color: transparent;
+    -fx-background-radius: 8px 8px 0 0;
+    -fx-padding: 8px 24px;
+    -fx-cursor: hand;
+    -fx-border-width: 0 0 2px 0;
+    -fx-border-color: transparent;
 }
-.tab-pane .tab
-{
-    -fx-background-color: #e6e6e6;
 
+.tab:hover {
+    -fx-background-color: rgba(99, 102, 241, 0.1); /* Indigo tint */
 }
 
-.tab-pane .tab:selected
-{
-    -fx-background-color: #3c3c3c;
+.tab:selected {
+    -fx-background-color: transparent;
+    -fx-border-color: #6366f1; /* Indigo border */
 }
 
 .tab .tab-label { 
     -fx-alignment: CENTER;
-    -fx-text-fill: #828282;
-    -fx-font-size: 12px;
-    -fx-font-weight: bold;
+    -fx-text-fill: #94a3b8; /* Slate 400 */
+    -fx-font-size: 13px;
+    -fx-font-weight: 600;
 }
 
 .tab:selected .tab-label { 
-    -fx-alignment: CENTER;
-    -fx-text-fill: #96b946;
+    -fx-text-fill: #6366f1; /* Indigo 500 */
 }
+
 .tab-pane:focused > .tab-header-area > .headers-region > .tab:selected .focus-indicator {
     -fx-border-color: transparent;
+}
+
+.tab-close-button {
+    -fx-padding: 2px;
 }

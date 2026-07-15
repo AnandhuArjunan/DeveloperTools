@@ -8,10 +8,17 @@ import javax.xml.bind.JAXBContext;
 import javax.xml.bind.Marshaller;
 import javax.xml.bind.Unmarshaller;
 
+import java.util.logging.Logger;
+import java.util.logging.Level;
+
 public class JAXBUtils {
 
+    private static final Logger LOGGER = Logger.getLogger(JAXBUtils.class.getName());
+
+    private JAXBUtils() {}
+
 	@SuppressWarnings("unchecked")
-	public static <T> T unmarchal(File file,Class<T> class1){
+	public static <T> T unmarshal(File file,Class<T> class1){
 		try{
 		    //getting the xml file to read
 		    //creating the JAXB context
@@ -25,7 +32,7 @@ public class JAXBUtils {
 		catch(RuntimeException e) {
 		    throw e;
 		}catch(Exception e){
-			e.printStackTrace();
+			LOGGER.log(Level.SEVERE, "Error unmarshalling file", e);
 		    return null;
 		}
 	}
@@ -47,7 +54,7 @@ public class JAXBUtils {
 	catch(RuntimeException e) {
 	    throw e;
 	}catch(Exception e) {
-	    e.printStackTrace();
+	    LOGGER.log(Level.SEVERE, "Error marshalling object", e);
 	}
 	
 	}

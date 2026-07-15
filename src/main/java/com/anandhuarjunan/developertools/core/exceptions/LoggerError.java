@@ -6,5 +6,9 @@ public class LoggerError extends InternalError {
 	public LoggerError(String msg){
 		super(msg);
 	}
+	
+	public LoggerError(String msg, Throwable cause){
+	    super(msg, cause);
+	}
 
 }

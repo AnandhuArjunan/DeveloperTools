@@ -43,16 +43,20 @@ import javafx.scene.control.ToolBar;
 import javafx.scene.control.Tooltip;
 import javafx.stage.FileChooser;
 
+import java.util.logging.Logger;
+import java.util.logging.Level;
+
 public class LogViewer extends AbstractTool {
+    private static final Logger LOGGER = Logger.getLogger(LogViewer.class.getName());
 	 
-	 int textSize=15;
+	private int textSize=15;
 	 
-	Label label;
-	AppConfiguration appConfig = GlobalConfig.getInstance().getAppConfiguration();
-	LoggerConfiguration loggerConfig = GlobalConfig.getInstance().getLoggerConfiguration();
-	LogViewerUI logViewerUI = new LogViewerUI();
-	File logFile = null; 
-	Separator zoomSep = null;
+	private Label label;
+	private AppConfiguration appConfig = GlobalConfig.getInstance().getAppConfiguration();
+	private LoggerConfiguration loggerConfig = GlobalConfig.getInstance().getLoggerConfiguration();
+	private LogViewerUI logViewerUI = new LogViewerUI();
+	private volatile File logFile = null; 
+	private Separator zoomSep = null;
 	
 	@Override
 	public void open() throws ToolError {
@@ -106,7 +110,7 @@ public class LogViewer extends AbstractTool {
 				return getPattern(words);
 
 			} catch (IOException e) {
-				e.printStackTrace();
+				LOGGER.log(Level.SEVERE, "Error reading log pattern file", e);
 			}
 			return null;
 	}
@@ -204,14 +208,11 @@ public class LogViewer extends AbstractTool {
 					logViewerUI.input.clear();
 					logViewerUI.input.replaceText(0, 0, FileUtils.readFileToString(logFile,StandardCharsets.UTF_8));
 				} catch (IOException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}	
-			});
-
+					LOGGER.log(Level.SEVERE, "Error reading log file", e);
+				}
 				label.setText(logFile.getName());
 				label.setTooltip(new Tooltip(logFile.getAbsolutePath()));
-				System.out.println(logViewerUI.input.getStyle());
+			});
 
 			return null;
 		}

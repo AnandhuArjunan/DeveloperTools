@@ -36,7 +36,7 @@
                   <Cursor fx:constant="DEFAULT" />
                </cursor>
             </VBox>
-            <ScrollPane prefHeight="296.0" prefWidth="208.0" styleClass="dashboard_info" VBox.vgrow="ALWAYS">
+            <ScrollPane prefHeight="296.0" prefWidth="208.0" styleClass="dashboard_info" VBox.vgrow="ALWAYS" fitToWidth="true">
                <content>
                   <VBox fx:id="infobox" spacing="5.0">
                      <padding>
@@ -44,9 +44,6 @@
                      </padding>
                   </VBox>
                </content>
-               <effect>
-                  <InnerShadow />
-               </effect>
             </ScrollPane>
          </children>
       </VBox>
@@ -57,10 +54,7 @@
             <HBox alignment="CENTER" spacing="10.0" styleClass="dashboard_search_bar">
                <children>
                   <FontAwesomeIconView glyphName="SEARCH" size="20" />
-                  <TextField fx:id="search" alignment="CENTER" focusTraversable="false" promptText="Search Tools &amp; Plugins" HBox.hgrow="ALWAYS">
-                     <effect>
-                        <DropShadow height="2.2" radius="5.3" />
-                     </effect>
+                  <TextField fx:id="search" alignment="CENTER" focusTraversable="false" promptText="Search Tools &amp; Plugins" HBox.hgrow="ALWAYS" styleClass="search-box">
                      <font>
                         <Font name="System Bold" size="13.0" />
                      </font>

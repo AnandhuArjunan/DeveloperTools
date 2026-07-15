@@ -18,10 +18,11 @@ import com.anandhuarjunan.developertools.core.utils.FileUtils;
 
 public class LoggerFactory {
 
-	static LoggerFactory factory = null;
-	Logger logger = null;
-	String name = null;
-	String path = null;
+	private static LoggerFactory factory = null;
+	private Logger logger = null;
+	private String name = null;
+	private String path = null;
+	
 	public static synchronized LoggerFactory getInstance() {
 	
 		if (null != factory) {
@@ -55,7 +56,7 @@ public class LoggerFactory {
 			fh.setFormatter(formatter);
 
 		} catch (SecurityException | IOException e) {
-			throw new LoggerError("Unable to start logging.");
+			throw new LoggerError("Unable to start logging.", e);
 		}
 	}
 

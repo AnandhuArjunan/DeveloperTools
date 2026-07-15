@@ -18,7 +18,11 @@ import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 public class JsonToCSVConverter extends  AbstractTool {
+	private static final Logger LOGGER = Logger.getLogger(JsonToCSVConverter.class.getName());
 	
 	JsonToCSVUI jsontocsv = new JsonToCSVUI();
 
@@ -47,8 +51,7 @@ public class JsonToCSVConverter extends  AbstractTool {
 			try {
 				execute();
 			} catch (Exception e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
+				LOGGER.log(Level.SEVERE, "Error converting JSON to CSV", e);
 			}
 			
 		}

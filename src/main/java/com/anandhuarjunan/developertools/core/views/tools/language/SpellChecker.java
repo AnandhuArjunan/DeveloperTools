@@ -41,7 +41,11 @@ import javafx.scene.layout.Region;
 import javafx.scene.layout.VBox;
 import javafx.stage.FileChooser;
 
+import java.util.logging.Logger;
+import java.util.logging.Level;
+
 public class SpellChecker extends AbstractTool{
+    private static final Logger LOGGER = Logger.getLogger(SpellChecker.class.getName());
 	
 	private AnchorPanePlane anchorPanePlane = new AnchorPanePlane();
     private static final Set<String> dictionary = new HashSet<>();
@@ -105,29 +109,25 @@ public class SpellChecker extends AbstractTool{
 		bar.getItems().add(field);
 		Button  button = new Button(Labels.SpellChecker.BUTTON_CHANGE);
 		
-		button.setOnAction(new EventHandler<ActionEvent>() {
-			public void handle(ActionEvent event) {
-				FileChooser fileChooser = new FileChooser();
-				fileChooser.getExtensionFilters().addAll(new FileChooser.ExtensionFilter("Text Data", "*.txt"));
-				File data = fileChooser.showOpenDialog(((Node) event.getSource()).getScene().getWindow());
-				if(null != data && data.exists()) {
-					
-				String[] words = null;
-				try {
-					words = FileUtils.readFileToString(data,StandardCharsets.UTF_8).split("\n");
-					if(null != words) {
-					     DataCache.getInstance().insert(ENGLISH_WORDS, words);
-					      dictionary.clear();
-					     dictionary.addAll(Arrays.asList(words));
-					     field.setText("Loaded "+data.getAbsolutePath());  
-					}
-				} catch (IOException e) {
-				//
+		button.setOnAction(event -> {
+			FileChooser fileChooser = new FileChooser();
+			fileChooser.getExtensionFilters().addAll(new FileChooser.ExtensionFilter("Text Data", "*.txt"));
+			File data = fileChooser.showOpenDialog(((Node) event.getSource()).getScene().getWindow());
+			if(null != data && data.exists()) {
+				
+			String[] words = null;
+			try {
+				words = FileUtils.readFileToString(data,StandardCharsets.UTF_8).split("\n");
+				if(null != words) {
+				     DataCache.getInstance().insert(ENGLISH_WORDS, words);
+				      dictionary.clear();
+				     dictionary.addAll(Arrays.asList(words));
+				     field.setText("Loaded "+data.getAbsolutePath());  
 				}
-			
-
+			} catch (IOException e) {
+			    LOGGER.log(Level.SEVERE, "Error reading dictionary file", e);
 			}
-		}
+		    }
 		});
 		
 		bar.getItems().add(button);

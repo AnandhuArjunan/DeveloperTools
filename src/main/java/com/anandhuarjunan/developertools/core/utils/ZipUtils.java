@@ -7,9 +7,14 @@ import java.io.FileOutputStream;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipOutputStream;
 
+import java.util.logging.Logger;
+
 public class ZipUtils {
 
-	
+    private static final Logger LOGGER = Logger.getLogger(ZipUtils.class.getName());
+
+    private ZipUtils() {}
+
 	 public static void zipFolder(File srcFolder, File destZipFile) throws Exception {
 	        try (FileOutputStream fileWriter = new FileOutputStream(destZipFile);
 	                ZipOutputStream zip = new ZipOutputStream(fileWriter)) {
@@ -28,7 +33,7 @@ public class ZipUtils {
 	            try (FileInputStream in = new FileInputStream(srcFile)) {
 	                String name = srcFile.getPath();
 	                name = name.replace(rootPath.getPath(), "");
-	                System.out.println("Zip " + srcFile + "\n to " + name);
+	                LOGGER.info("Zip " + srcFile + "\n to " + name);
 	                zip.putNextEntry(new ZipEntry(name));
 	                while ((len = in.read(buf)) > 0) {
 	                    zip.write(buf, 0, len);
@@ -38,8 +43,11 @@ public class ZipUtils {
 	    }
 
 	    private static void addFolderToZip(File rootPath, File srcFolder, ZipOutputStream zip) throws Exception {
-	        for (File fileName : srcFolder.listFiles()) {
-	            addFileToZip(rootPath, fileName, zip);
+	        File[] files = srcFolder.listFiles();
+	        if (files != null) {
+	            for (File fileName : files) {
+	                addFileToZip(rootPath, fileName, zip);
+	            }
 	        }
 	    }
 	}

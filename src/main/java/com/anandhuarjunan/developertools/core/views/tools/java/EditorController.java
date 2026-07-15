@@ -34,7 +34,12 @@ import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Popup;
 
+import java.util.logging.Logger;
+import java.util.logging.Level;
+
 public class EditorController {
+    
+    private static final Logger LOGGER = Logger.getLogger(EditorController.class.getName());
 
     private CodeArea codeTextArea;
     private TextArea resultTextArea;
@@ -46,6 +51,12 @@ public class EditorController {
     public EditorController(CodeArea codeArea) {
         taskExecutor = Executors.newSingleThreadExecutor();
         codeTextArea = codeArea;
+    }
+    
+    public void shutdown() {
+        if (taskExecutor != null) {
+            taskExecutor.shutdown();
+        }
     }
 
     public void editorSettings() {
@@ -70,7 +81,7 @@ public class EditorController {
                     if (tryTask.isSuccess()) {
                         return Optional.of(tryTask.get());
                     } else {
-                        tryTask.getFailure().printStackTrace();
+                        LOGGER.log(Level.SEVERE, "Highlighting failed", tryTask.getFailure());
                         return Optional.empty();
                     }
                 })

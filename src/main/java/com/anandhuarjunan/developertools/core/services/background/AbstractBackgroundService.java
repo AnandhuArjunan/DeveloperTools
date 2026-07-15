@@ -8,8 +8,8 @@ import java.util.UUID;
 import com.anandhuarjunan.developertools.core.exceptions.InternalError;
 
 public abstract class AbstractBackgroundService implements BackgroundService{
-
-     volatile ServiceStatus serviceStatus = null;
+    
+    private volatile ServiceStatus serviceStatus = null;
     private String name = null;
     private String id = null;
     private String description = null;
@@ -69,8 +69,8 @@ public abstract class AbstractBackgroundService implements BackgroundService{
         this.description = description;
     }
 
-    public void setServiceStatus(ServiceStatus serviceStatus) {
-	        this.serviceStatus = serviceStatus;
+    public synchronized void setServiceStatus(ServiceStatus serviceStatus) {
+        this.serviceStatus = serviceStatus;
     }
 
     public abstract ServiceTypes serviceType();

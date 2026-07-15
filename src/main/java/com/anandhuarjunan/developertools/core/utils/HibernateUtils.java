@@ -10,7 +10,14 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
+import java.util.logging.Logger;
+import java.util.logging.Level;
+
 public class HibernateUtils {
+	
+        private static final Logger LOGGER = Logger.getLogger(HibernateUtils.class.getName());
+
+        private HibernateUtils() {}
 	 
 	    private static final SessionFactory sessionFactory;
 	     
@@ -19,7 +26,7 @@ public class HibernateUtils {
 	            sessionFactory =new Configuration().configure().buildSessionFactory();
 	 
 	        }catch (Exception ex) {
-	            System.err.println("Session Factory could not be created." + ex);
+	            LOGGER.log(Level.SEVERE, "Session Factory could not be created.", ex);
 	            throw new ExceptionInInitializerError(ex);
 	        }   
 	    }
@@ -31,7 +38,7 @@ public class HibernateUtils {
 	    public static <T> List<T> loadAllData(Class<T> type, Session session) {
 	        CriteriaBuilder builder = session.getCriteriaBuilder();
 	        CriteriaQuery<T> criteria = builder.createQuery(type);
-	        criteria.from(type);
+	        criteria.select(criteria.from(type));
 	        return session.createQuery(criteria).getResultList();
 	      }
 	 

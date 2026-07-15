@@ -15,10 +15,18 @@ import com.anandhuarjunan.developertools.core.exceptions.InternalError;
 
 public class ExecutableUtils {
 
+    private ExecutableUtils() {}
+
 	public static void invokeRunnableJar(String filePath,String fileName,String commandDB) throws  IOException, InternalError  {
 		if(null != System.getProperty("java.home")) {
-			String command  = StringUtils.isEmpty(commandDB)?(" java -jar "):commandDB;
-			CommandLine cmdLine = CommandLine.parse(command+" "+ "\""+FilenameUtils.separatorsToSystem(filePath+File.separator+fileName)+"\"");
+			CommandLine cmdLine;
+			if(StringUtils.isEmpty(commandDB)) {
+			    cmdLine = new CommandLine("java");
+			    cmdLine.addArgument("-jar");
+			} else {
+			    cmdLine = CommandLine.parse(commandDB);
+			}
+			cmdLine.addArgument(FilenameUtils.separatorsToSystem(filePath+File.separator+fileName), false);
 			DefaultExecutor executor = new DefaultExecutor();
 			DefaultExecuteResultHandler resultHandler = new DefaultExecuteResultHandler();
 			executor.execute(cmdLine, resultHandler);
@@ -31,7 +39,11 @@ public class ExecutableUtils {
 	
 	public static void invokeWindowsBat(String filePath) throws   IOException, InternalError {
 		if(SystemUtils.IS_OS_WINDOWS) {
-		CommandLine cmdLine = CommandLine.parse("cmd /c start \"\""+"\""+FilenameUtils.separatorsToSystem(filePath)+"\"");
+		CommandLine cmdLine = new CommandLine("cmd");
+		cmdLine.addArgument("/c");
+		cmdLine.addArgument("start");
+		cmdLine.addArgument("\"\"", false);
+		cmdLine.addArgument(FilenameUtils.separatorsToSystem(filePath), false);
 		DefaultExecutor executor = new DefaultExecutor();
 		DefaultExecuteResultHandler resultHandler = new DefaultExecuteResultHandler();
 		executor.execute(cmdLine,resultHandler);
@@ -43,7 +55,12 @@ public class ExecutableUtils {
 	
 	public static void invokeWindowsExe(String filePath) throws   IOException, InternalError {
 		if(SystemUtils.IS_OS_WINDOWS) {
-		Runtime.getRuntime().exec("rundll32 url.dll,FileProtocolHandler "+"\""+FilenameUtils.separatorsToSystem(filePath)+"\"");
+		CommandLine cmdLine = new CommandLine("rundll32");
+		cmdLine.addArgument("url.dll,FileProtocolHandler");
+		cmdLine.addArgument(FilenameUtils.separatorsToSystem(filePath), false);
+		DefaultExecutor executor = new DefaultExecutor();
+		DefaultExecuteResultHandler resultHandler = new DefaultExecuteResultHandler();
+		executor.execute(cmdLine, resultHandler);
 		}
 		else {
 			throw new InternalError("Windows Batch Files Cannot be Launched.");

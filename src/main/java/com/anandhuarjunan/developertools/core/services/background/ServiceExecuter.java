@@ -8,11 +8,14 @@ import java.util.List;
 
 import com.anandhuarjunan.developertools.core.exceptions.InternalError;
 
+import java.util.concurrent.CopyOnWriteArrayList;
+import java.util.Collections;
+
 public class ServiceExecuter {
     
     private ServiceExecuter(){}
 
-    static List<BackgroundService> runningServices = new  ArrayList<>();
+    private static List<BackgroundService> runningServices = new CopyOnWriteArrayList<>();
     
     
     
@@ -26,7 +29,7 @@ public class ServiceExecuter {
        }
     
     public static void stopAllServices() throws InternalError {
-	if(null != runningServices && !runningServices.isEmpty()) {
+	if(!runningServices.isEmpty()) {
 	    for(BackgroundService backgroundService : runningServices) {
 		stopService(backgroundService);
 	    }
@@ -34,7 +37,7 @@ public class ServiceExecuter {
     }
 
     public static List<BackgroundService> getRunningServices() {
-        return runningServices;
+        return Collections.unmodifiableList(runningServices);
     }
        
     

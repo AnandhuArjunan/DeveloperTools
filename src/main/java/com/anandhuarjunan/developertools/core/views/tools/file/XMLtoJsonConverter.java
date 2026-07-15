@@ -20,7 +20,11 @@ import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 
+import java.util.logging.Logger;
+import java.util.logging.Level;
+
 public class XMLtoJsonConverter extends AbstractTool{
+    private static final Logger LOGGER = Logger.getLogger(XMLtoJsonConverter.class.getName());
 	
 	
 	private XmlToJsonUI xmlToJsonUI = new XmlToJsonUI();
@@ -48,7 +52,7 @@ public class XMLtoJsonConverter extends AbstractTool{
 			try {
 				execute();
 			} catch (ProcessError e) {
-				e.printStackTrace();
+				LOGGER.log(Level.SEVERE, "Error converting XML to JSON", e);
 			}
 			
 		}
@@ -60,8 +64,7 @@ public class XMLtoJsonConverter extends AbstractTool{
 
 	@Override
 	public void open() throws ToolError {
-		try {
-			 InputStream input = getClass().getClassLoader().getResourceAsStream("images/batch.png");
+		try (InputStream input = getClass().getClassLoader().getResourceAsStream("images/batch.png")) {
 		     Image image = new Image(input);
 		     ImageView imageView = new ImageView(image);
 			Label label = new Label("Click here to Convert Batch XML files to JSON files");

@@ -11,8 +11,13 @@ import org.apache.commons.compress.archivers.jar.JarArchiveInputStream;
 import org.apache.commons.compress.utils.IOUtils;
 
 public class JarUtils {
+	
+	private JarUtils() {}
+	
 	public static void decompress(File in, File destination) throws IOException {
 		
+
+        String destCanonicalPath = destination.getCanonicalPath();
 
         try (JarArchiveInputStream jin = new JarArchiveInputStream(new FileInputStream(in))){
             JarArchiveEntry entry;
@@ -21,13 +26,18 @@ public class JarUtils {
                     continue;
                 }
                 File curfile = new File(destination, entry.getName());
+                if (!curfile.getCanonicalPath().startsWith(destCanonicalPath + File.separator)) {
+                    throw new IOException("Entry is outside of the target dir: " + entry.getName());
+                }
                 File parent = curfile.getParentFile();
                 if (!parent.exists()) {
                     if (!parent.mkdirs()){
                         throw new RuntimeException("could not create directory: " + parent.getPath());
                     }
                 }
-                IOUtils.copy(jin, new FileOutputStream(curfile));
+                try (FileOutputStream fos = new FileOutputStream(curfile)) {
+                    IOUtils.copy(jin, fos);
+                }
             }
         }
     }

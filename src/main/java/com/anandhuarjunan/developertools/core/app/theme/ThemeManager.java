@@ -54,7 +54,7 @@ public class ThemeManager  {
 		
 			File themeFile = FileUtils.pathToFile(CommonConstant.THEME_FOLDER+THEME_INFO_FILE);
 			
-			Themes loadedthemes = JAXBUtils.unmarchal(themeFile, Themes.class);
+			Themes loadedthemes = JAXBUtils.unmarshal(themeFile, Themes.class);
 			
 			
 			if(null != loadedthemes) {

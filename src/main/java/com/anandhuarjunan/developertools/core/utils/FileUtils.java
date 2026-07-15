@@ -16,6 +16,8 @@ import com.anandhuarjunan.developertools.core.exceptions.InternalError;
 
 public class FileUtils {
 
+    private FileUtils() {}
+
 	
 
 	public static void makeFolder(String path) throws InternalError {
@@ -59,7 +61,8 @@ public class FileUtils {
 		if(file.isFile()) {
 			throw new InternalError("The Given location is a file , not a directory");
 		}else {
-			return file.listFiles();
+			File[] files = file.listFiles();
+			return files != null ? files : new File[0];
 		}
 	        
 	    }

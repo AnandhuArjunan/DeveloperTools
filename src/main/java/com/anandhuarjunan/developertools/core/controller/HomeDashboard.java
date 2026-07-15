@@ -344,14 +344,6 @@ public class HomeDashboard extends FxmlLoaderTool implements Initializable {
 		infobox.getChildren().add(getJavaHome());
 		infobox.getChildren().add(getDay());
 		infobox.getChildren().add(getTime());
-		infobox.getChildren().add(getOsName());
-		infobox.getChildren().add(getJavaHome());
-		infobox.getChildren().add(getDay());
-		infobox.getChildren().add(getTime());
-		infobox.getChildren().add(getOsName());
-		infobox.getChildren().add(getJavaHome());
-		infobox.getChildren().add(getDay());
-		infobox.getChildren().add(getTime());
 	}
 
 	InfoPane getOsName() {

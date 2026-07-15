@@ -9,6 +9,9 @@ import java.util.stream.Stream;
 
 import com.anandhuarjunan.developertools.core.constants.Labels;
 public class StringUtils {
+    
+    private StringUtils() {}
+    
 	public static String convertToDelimiterType(String selectedItem) {
 		if(Labels.NEW_LINE.equalsIgnoreCase(selectedItem)) {
 			return Constants.CHAR_NEW_LINE;
@@ -62,7 +65,7 @@ public class StringUtils {
 	
 	public static String appendWords(String delimiter,String...strings ) {
 		
-        Stream<String> words = Arrays.asList(strings).stream();
+        Stream<String> words = Arrays.stream(strings);
 
 		return words.collect(Collectors.joining(delimiter));
 	}

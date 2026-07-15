@@ -13,6 +13,8 @@ import java.util.Properties;
 
 
 public class PropertyUtils {
+    
+    private PropertyUtils() {}
 
 
 	public static Properties loadProperty(File file) throws  IOException  {
@@ -50,7 +52,9 @@ public class PropertyUtils {
 	    // grr at load() returning void rather than the Properties object
 	    // so this takes 3 lines instead of "return new Properties().load(...);"
 	    final Properties p = new Properties();
-	    p.load(new StringReader(s));
+	    try (StringReader sr = new StringReader(s)) {
+	        p.load(sr);
+	    }
 	    return p;
 	}
 }

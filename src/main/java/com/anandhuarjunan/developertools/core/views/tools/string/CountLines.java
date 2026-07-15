@@ -18,7 +18,11 @@ import javafx.scene.control.Label;
 import javafx.scene.text.Font;
 
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 public class CountLines extends AbstractTool {
+    private static final Logger LOGGER = Logger.getLogger(CountLines.class.getName());
 
 	ComboBox<String> comboBox ;
 	Label sep = new Label(Labels.SEPARATED_BY);
@@ -76,8 +80,7 @@ public class CountLines extends AbstractTool {
 			try {
 				execute();
 			} catch (ProcessError e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
+				LOGGER.log(Level.SEVERE, "Error counting lines", e);
 			}
 			
 		}

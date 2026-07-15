@@ -11,6 +11,8 @@ import org.apache.commons.configuration2.builder.fluent.Parameters;
 import org.apache.commons.configuration2.ex.ConfigurationException;
 
 public class ConfigUtils {
+    
+    private ConfigUtils() {}
 	/*public static String getConfigPath(Tools tool,String fileName) {
 		ToolMetaData toolMetaData = tool.metadata();
 		StringBuilder builder = new StringBuilder();
@@ -76,8 +78,8 @@ public class ConfigUtils {
 		    .configure(params.properties()
 		        .setFile(new File(filePath)));
 
-		Configuration cc = new CompositeConfiguration(builder.getConfiguration());
-		cc.setProperty(key,value);
+		PropertiesConfiguration config = builder.getConfiguration();
+		config.setProperty(key, value);
 
 		builder.save();
 	}

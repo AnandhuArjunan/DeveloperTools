@@ -22,6 +22,7 @@ public class SerializationUtils {
     	try (
     	 FileInputStream fileIn = new FileInputStream(path);
          ObjectInputStream in = new ObjectInputStream(fileIn);){
+            // WARNING: Insecure deserialization. Ensure the source is trusted.
             return  in.readObject();
 
     	}

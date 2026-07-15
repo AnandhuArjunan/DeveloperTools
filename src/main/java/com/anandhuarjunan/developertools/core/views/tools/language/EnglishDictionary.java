@@ -29,7 +29,11 @@ import com.anandhuarjunan.developertools.core.views.AbstractTool;
 
 import javafx.scene.Node;
 
+import java.util.logging.Logger;
+import java.util.logging.Level;
+
 public class EnglishDictionary extends AbstractTool{
+    private static final Logger LOGGER = Logger.getLogger(EnglishDictionary.class.getName());
 	EnglishDictionaryUI dictionaryUI = new EnglishDictionaryUI();
 	Map<String,Elements> dictionaryData = null;
 	Set<String> sortedDictionaryWords = null;
@@ -44,11 +48,16 @@ public class EnglishDictionary extends AbstractTool{
 			if(null == dictionaryData) {
 				try {
 					dictionaryData = dataProvider();
+					DataCache.getInstance().insert(CommonConstant.ENGLISH_DICTIONARY, dictionaryData);
 				} catch (IOException e) {
-					
+					LOGGER.log(Level.SEVERE, "Failed to load dictionary", e);
 				}
-				DataCache.getInstance().insert(CommonConstant.ENGLISH_DICTIONARY, dictionaryData);
 			}
+			
+			if (dictionaryData == null) {
+			    dictionaryData = new HashMap<>();
+			}
+
 			sortedDictionaryWords = new TreeSet<>(dictionaryData.keySet());
 			dictionaryUI.addToListview(sortedDictionaryWords);
 		
@@ -59,21 +68,15 @@ public class EnglishDictionary extends AbstractTool{
 	
 	public void showResult(String keyword) {
 		final StringBuilder data = new StringBuilder();
-		boolean bool = false;
 		
-		for(Iterator<String> it = dictionaryData.keySet().iterator();it.hasNext();) {
-			if(it.next().toLowerCase(Locale.ENGLISH).equalsIgnoreCase(keyword)) {
-				Elements wordMeanings = dictionaryData.get(keyword);
-				wordMeanings.forEach(el->{data.append(el.parentNode().toString());});
-				bool = true;
-			}
-			
-		}
-		if(!bool) {
+		Elements wordMeanings = dictionaryData.get(keyword);
+		if (wordMeanings != null) {
+			wordMeanings.forEach(el -> {
+				data.append(el.parentNode().toString());
+			});
+		} else {
 			data.append("<b>No Word Found</b>");
 		}
-
-		
 		
 		dictionaryUI.setWebView(data.toString());
 	}
